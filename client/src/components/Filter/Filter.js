@@ -3,7 +3,7 @@ import { dataSummer, dataWinter } from "../../data";
 import { MyContext } from "../../Context/Context";
 
 function Filter() {
-   const { isSummer,destinations,setDestinations } = useContext(MyContext);
+   const { isSummer,setDestinations } = useContext(MyContext);
   const [data, setData] = useState([]);
   const [place, setPlace] = useState();
   const [activities, setActivities] = useState();
@@ -13,7 +13,7 @@ const [allActivities,setAllActivities] =useState([])
   useEffect(() => {
       setData(isSummer ? dataSummer : dataWinter);
     },
-    []);
+    [isSummer]);
 
     useEffect(() => {
       const places = []
@@ -28,7 +28,10 @@ const [allActivities,setAllActivities] =useState([])
       setAllActivities(activities.filter((v, i) => activities.indexOf(v) === i))},
     [data]);
 
-
+/**
+ * @function handleOnClick
+ * @return - dispatch an array of objects filtering  values selected by the user
+ */
     const handleOnClick=()=>{
       if(activities && place)  setDestinations({type:'SELECTED_DESTINATIONS',destinations:data.filter(e=> e.activities===activities&&e.place===place)})
       if(!activities && place)  setDestinations({type:'SELECTED_DESTINATIONS',destinations:data.filter(e=> e.place===place)})

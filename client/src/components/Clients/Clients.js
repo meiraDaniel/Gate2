@@ -4,8 +4,14 @@ import Carrosel from "../Carrossel/Carrossel"
 import Arrow from "../Carrossel/Arrow"
 
 function Clients() {
-  const [data, setData] = useState(client.sort(() => Math.random() - 0.5));
+  const [data] = useState(client.sort(() => Math.random() - 0.5));
   const [currentInd,setCurrentInd]= useState(0)
+
+ /**
+  * @function previousSlide
+  * @return set the index value to [...current index]  -1
+  */
+ 
 
   const previousSlide=()=>{
     const lastIndex =data.length-1
@@ -15,6 +21,11 @@ function Clients() {
 
     setCurrentInd(index)
 }
+
+/**
+  * @function previousSlide
+  * @return set the index value to [...current index] +1
+  */
 const nextSlide=()=>{
     const lastIndex =data.length-1
     const shouldResetIndex = setCurrentInd(0);

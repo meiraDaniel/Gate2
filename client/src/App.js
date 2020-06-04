@@ -1,4 +1,4 @@
-import React,{useState, useContext} from 'react';
+import React,{useContext} from 'react';
 import './App.css';
 import { Switch,Route,useHistory} from "react-router-dom";
 import LandingPage from './pages/Landing/LandingPage'
@@ -7,9 +7,13 @@ import Navegation from './pages/navegation/Navegation'
 import {MyContext} from './Context/Context'
 
 function App() {
- const {isSummer,setIsSummer}= useContext(MyContext)
+ const {setIsSummer}= useContext(MyContext)
  const history=useHistory()
-
+/**
+ * @function togleSummer
+ * @param {boolean} e  - the value selected by the user 
+ * @returns dispatch true or false( true if the user select summer false if select winter)
+ */
  const togleSummer = (e)=>{
   setIsSummer({type:'CHOOSE_SEASON',isSummer:e})
   history.push("/home")

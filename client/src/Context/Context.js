@@ -1,4 +1,4 @@
-import React, {createContext,useState,useReducer,useEffect} from 'react'
+import React, {createContext,useReducer,useEffect} from 'react'
 import {SeasonReducer,userDestinations} from "../Reducer/reducer"
 
 export const MyContext = createContext()

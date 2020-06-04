@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import "./Navegation.scss";
 import { dataSummer, dataWinter } from "../../data";
 import { MyContext } from "../../Context/Context";
@@ -7,17 +7,16 @@ import { MyContext } from "../../Context/Context";
 function LandingPage({ toogleSummer }) {
   
     const [link, setLink] = useState("");
-  const { setSelected,isSummer,destinations,setDestinations} = useContext(MyContext);
+  const { isSummer,setDestinations} = useContext(MyContext);
 
   const [data, setData] = useState([]);
-  const history = useHistory();
   const [allPlaces,setAllPlaces] =useState([])
 const [allActivities,setAllActivities] =useState([])
 
   useEffect(() => {
       setData(isSummer ? dataSummer : dataWinter);
     },
-    []);
+    [isSummer]);
 
     useEffect(() => {
       const places = []
@@ -32,15 +31,32 @@ const [allActivities,setAllActivities] =useState([])
       setAllActivities(activities.filter((v, i) => activities.indexOf(v) === i))},
     [data]);
 
+    /**
+     * @function handleOnMouseEnter
+     * @param {string} session  - activities or destination
+     * @returns - open an menu with the links
+     */
     const handleOnMouseEnter = (session) => {
     setLink(session);
   };
+
+  /**
+   * @function handlePlace
+   * @param {string} selectedPlace 
+   * @returns an array of ojects with filtered by the selected  place 
+   */
  
-  const handlerPlace = (selectedPlace) => {
+  const handlePlace = (selectedPlace) => {
     setDestinations({type:'SELECTED_DESTINATIONS',destinations:data.filter(e=>e.place===selectedPlace)})
   };
+   /**
+   * @function handleActivities
+   * @param {string} selectedActivity 
+   * @returns an array of ojects with filtered by the selected ativity 
+   */
  
-  const handlerActivities = (selectedActivity) => {
+ 
+  const handleActivities = (selectedActivity) => {
     setDestinations({type:'SELECTED_DESTINATIONS',destinations:data.filter(e=>e.activities===selectedActivity)})
 
   };
@@ -63,14 +79,14 @@ const [allActivities,setAllActivities] =useState([])
         {link === "destination"? data.length>0 ? (
           <div>
             {allPlaces.map((e,i) => (
-              <h3  key={i} onClick={() => handlerPlace(e)}>{e}</h3>
+              <h3  key={i} onClick={() => handlePlace(e)}>{e}</h3>
             ))}
           </div>
         ) : <h3>Loading</h3>:null}
         {link === "activities" ? data.length>0 ? (
           <div>
             {allActivities.map((e,i) => (
-              <h3 key={i} onClick={() => handlerActivities(e)}>
+              <h3 key={i} onClick={() => handleActivities(e)}>
                 {e}
               </h3>
             ))}

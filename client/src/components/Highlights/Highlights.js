@@ -3,7 +3,7 @@ import { dataSummer, dataWinter } from "../../data";
 import { MyContext } from "../../Context/Context";
 
 function Highlights() {
-  const { isSummer, dispatch } = useContext(MyContext);
+  const { isSummer} = useContext(MyContext);
   const [data, setData] = useState([]);
   const [selectedData, setSelectedData] = useState([]);
 
@@ -17,8 +17,8 @@ function Highlights() {
 
   return (
     <div>
-      {selectedData.map((destination) => (
-        <div>
+      {selectedData.map((destination,i) => (
+        <div key={i}>
           <h1>{destination.place}</h1>
           <h2>{destination.activities}</h2>
           <h3>{destination.pricePerDay}</h3>
