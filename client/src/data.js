@@ -18,3 +18,21 @@ export const dataSummer = [
     { place: "Polo Norte3", activities: "goiabada",pricePerDay:"5",sale:false },
 
   ];
+
+  export const client = [
+      {name:"User1", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", place:"BH"},
+      {name:"User2", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", place:"BH"},
+      {name:"User3", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", place:"BH"},
+      {name:"User4", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", place:"BH"},
+      {name:"User5", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", place:"BH"},
+      {name:"User6", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", place:"BH"},
+      {name:"User7", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", place:"BH"},
+      {name:"User8", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", place:"BH"}
+
+
+
+
+
+
+
+  ]
