@@ -45,15 +45,15 @@ function LandingPage({ toogleSummer }) {
       <section>
         {link === "destination" ? (
           <div>
-            {data.map((e) => (
-              <h3 onClick={() => handlerPlace(e.place)}>{e.place}</h3>
+            {data.map((e,i) => (
+              <h3  key={i} onClick={() => handlerPlace(e.place)}>{e.place}</h3>
             ))}
           </div>
         ) : null}
         {link === "activities" ? (
           <div>
-            {data.map((e) => (
-              <h3 onClick={() => handlerActivities(e.activities)}>
+            {data.map((e,i) => (
+              <h3 key={i} onClick={() => handlerActivities(e.activities)}>
                 {e.activities}
               </h3>
             ))}

@@ -5,27 +5,38 @@ import { MyContext } from "../../Context/Context";
 function Filter() {
    const { isSummer, dispatch } = useContext(MyContext);
   const [data, setData] = useState([]);
-  
+  const [selectedData, setSelectedData] = useState();
+  const [place, setPlace] = useState();
+  const [activities, setActivities] = useState();
+
   useEffect(() => {
       setData(isSummer ? dataSummer : dataWinter);
     },
     []);
 
+    const handleOnClick=()=>{
+      if(activities && place)  setSelectedData(data.filter(e=> e.activities===activities&&e.place===place))
+      if(!activities && place)  setSelectedData(data.filter(e=> e.place===place))
+      if(activities && !place)  setSelectedData(data.filter(e=> e.activities===activities))
+      if(!activities && !place)  setSelectedData(data)
+    }
+     
+   
   return (
     <div>
-       <select name="place" id="place">
+       <select onChange={(e)=>setPlace(e.target.value)} name="place" id="place">
         <option value="none">Place</option>
-        {data.map((e) => (
-          <option value={e.place}>{e.place}</option>
+        {data.map((e,i) => (
+          <option  key={i} value={e.place}>{e.place}</option>
         ))}
       </select>
-      <select name="place" id="place">
+      <select onChange={(e)=>setActivities(e.target.value)} name="place" id="place">
         <option value="none">Activities</option>
-        {data.map((e) => (
-          <option value={e.activities}>{e.activities}</option>
+        {data.map((e,i) => (
+          <option key={i} value={e.activities}>{e.activities}</option>
         ))}
       </select>
-      <button>Select</button> 
+      <button onClick={handleOnClick}>Select</button> 
     </div>
   );
 }
