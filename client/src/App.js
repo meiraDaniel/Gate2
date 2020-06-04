@@ -7,11 +7,11 @@ import Navegation from './pages/navegation/Navegation'
 import {MyContext} from './Context/Context'
 
 function App() {
- const {isSummer,dispatch}= useContext(MyContext)
+ const {isSummer,setIsSummer}= useContext(MyContext)
  const history=useHistory()
 
  const togleSummer = (e)=>{
-  dispatch({type:'CHOOSE_SEASON',isSummer:e})
+  setIsSummer({type:'CHOOSE_SEASON',isSummer:e})
   history.push("/home")
 
  }

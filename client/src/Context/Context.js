@@ -1,14 +1,15 @@
 import React, {createContext,useState,useReducer,useEffect} from 'react'
-import {SeasonReducer} from "../Reducer/reducer"
+import {SeasonReducer,userDestinations} from "../Reducer/reducer"
 
 export const MyContext = createContext()
 
 
 export const Provider  = props =>{
-    const[isSummer,dispatch] =useReducer(SeasonReducer,[] ,()=>{
+    const[isSummer,setIsSummer] =useReducer(SeasonReducer,[] ,()=>{
         const localData = localStorage.getItem('isSummer');
         return localData ? JSON.parse(localData) : []; 
     } );
+    const[destinations,setDestinations] =useReducer(userDestinations,[]);
 
 
     useEffect(()=>{
@@ -17,7 +18,7 @@ export const Provider  = props =>{
 
     
 return(
-        <MyContext.Provider  value={{isSummer,dispatch}}>
+        <MyContext.Provider  value={{isSummer,setIsSummer,destinations,setDestinations}}>
             {props.children}
         </MyContext.Provider>
 

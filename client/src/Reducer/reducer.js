@@ -7,3 +7,12 @@ export const SeasonReducer = (state, action) => {
       return state;
   }
 } 
+
+export const userDestinations = (state, action) => {
+  switch (action.type) {
+    case 'SELECTED_DESTINATIONS':
+      return {destinations:action.destinations};
+    default:
+      return state;
+  }
+} 
