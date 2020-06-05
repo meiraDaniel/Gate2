@@ -1,5 +1,5 @@
 import React,{useContext} from 'react';
-import './App.css';
+import './App.scss';
 import { Switch,Route,useHistory} from "react-router-dom";
 import LandingPage from './pages/Landing/LandingPage'
 import Home from './pages/Home/Home'

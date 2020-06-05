@@ -1,0 +1,70 @@
+@import "../../global.scss";
+
+.head--main--winter{
+    background:url("../../images/backgroundWinter.jpg");
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.head--main--summer{
+    background:url("../../images/backgroundSummer.jpg");
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.head--container{
+    width:100%;
+    height:95%;
+    align-self: flex-end;
+    display:flex;
+    flex-direction:block;
+    justify-content: center;
+    align-items: center;
+    
+}
+.head--center-content{
+    width:85%;
+    height:35%;
+    
+}
+
+.head--center-content h2{
+    font-family:$body;
+    font-size:3.5vh;
+    height:3%;
+    color:$backgroundSummer;
+
+
+}
+
+.head--center-title{
+    background-color: rgba(0, 0, 0, 0.137);
+    width:99%;
+    height:85%;
+    font-family:$headline;
+    font-size:7.5vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $highlightsSummer;
+    color:white;
+
+}
+
+@media only screen and (min-width:800px){
+    .head--center-content{
+        width:45%;
+        height:65%;
+        
+    }  
+}

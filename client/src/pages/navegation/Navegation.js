@@ -3,6 +3,7 @@ import { NavLink} from "react-router-dom";
 import "./Navegation.scss";
 import { dataSummer, dataWinter } from "../../data";
 import { MyContext } from "../../Context/Context";
+import logo from '../../images/logo.png'
 
 function LandingPage({ toogleSummer }) {
   
@@ -62,20 +63,21 @@ const [allActivities,setAllActivities] =useState([])
   };
 
   return (
-    <main>
+    <main className="navegation--main">
       <nav>
-        <h3 onMouseEnter={() => handleOnMouseEnter("destination")}>
+        <img src={logo} alt=""/>
+        <h3  className={isSummer?"navegation--links-summer":"navegation--links-winter"} onMouseEnter={() => handleOnMouseEnter("destination")}>
           {" "}
           Destinations{" "} 
         </h3> 
-        <h3 onMouseEnter={() => handleOnMouseEnter("activities")}>
+        <h3 className={isSummer?"navegation--links-summer":"navegation--links-winter"}  onMouseEnter={() => handleOnMouseEnter("activities")}>
           {" "}
            Activities{" "}
         </h3>
-        <NavLink to="/aboutus"> About us</NavLink>
-        <NavLink to="/contact"> Contact </NavLink>
+        <NavLink className={isSummer?"navegation--links-summer":"navegation--links-winter"} to="/aboutus"> About us</NavLink>
+        <NavLink className={isSummer?"navegation--links-summer":"navegation--links-winter"}  to="/contact"> Contact </NavLink>
       </nav>
-      <section>
+      <section className={isSummer?"navegation--center-opendiv-summer":"navegation--center-opendiv-winter"} >
         {link === "destination"? data.length>0 ? (
           <div>
             {allPlaces.map((e,i) => (
