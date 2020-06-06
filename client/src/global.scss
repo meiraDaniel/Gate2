@@ -1,0 +1,38 @@
+//color pallet
+
+//summer
+$summerWhite:#F3F4F4;
+$nude:#DBBFA4;
+$letterSummer:#F9E9DC;
+$backgroundSummer:#244B52;
+$highlightsSummer:#77B1BC;
+
+//winter
+$mainBackgroundWinter:#E0E4EC;
+$letterWinter:#BABDC2;
+$buttonCollorWinter:#6C98C9;
+$highlightsWinter:#3C80C6;
+$opacBlue:#396CA3;
+$backgroundWinter:#173F70;
+$darkGray:#4D6D78;
+
+$headline: 'Lora', serif;
+$body: 'Merriweather', serif;
+
+%button--big{
+    background:#244B52;
+    color:$nude;
+    box-shadow:6px -6px 10px rgba(0, 0, 0, 0.397);
+    font-family:$headline;
+    cursor:pointer;
+}
+%button--small{
+    color:white;
+    box-shadow:6px -6px 10px rgba(245, 245, 245, 0.205);
+    border:none;
+    font-size:100%;
+    font-family:$headline;
+    cursor:pointer;
+
+}
+

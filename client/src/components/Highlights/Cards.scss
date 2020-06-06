@@ -1,0 +1,111 @@
+@import '../../global.scss';
+
+%card--main{
+    width:51%;
+    height:65%;
+    display:flex;
+    flex-direction:column;
+        box-shadow: -7px 7px 15px rgba(0, 0, 0, 0.65);
+        margin-bottom:5%;
+      
+}
+
+%img{
+    width:100%;
+    height:40%;
+
+}
+
+
+.card--main-summer{
+@extend %card--main;
+background:white;
+img{
+    @extend %img;
+}
+}
+
+.card--main-winter{
+    @extend %card--main;
+    background:$mainBackgroundWinter;
+    img{
+        @extend %img
+    }
+    }
+
+.card--center--content{
+    width:90%;
+    height:60%;
+    margin:5%;
+    color:$backgroundSummer;
+ h1{
+     font-size:4.5vh;
+     margin:0;
+ }
+
+}
+.card--bottom-price{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:55%;
+    border-top:6px solid $highlightsSummer;
+    h3{
+        margin:0;
+    font-size:7vh;
+    color:$highlightsSummer;
+    align-self:flex-end;
+}
+p{
+    margin:0;
+    font-size:1.5vh;
+}
+}
+
+
+.button--small-summer{
+@extend %button--small;
+width:100%;
+height:15%;
+align-self:flex-end;
+background:$nude;
+
+}
+.button--small-winter{
+    @extend %button--small;
+    width:100%;
+    height:15%;
+    align-self:flex-end;
+    background:$backgroundWinter
+}
+
+@media only screen and (min-width:750px){
+    
+%img{
+    width:100%;
+    height:45%;
+
+}
+    %card--main{
+        width:30%;
+        height:60%;
+        margin:1%;
+        display:flex;
+        flex-direction:column;
+            box-shadow: -6px 6px 15px black;
+          
+    }
+    .card--bottom-price{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+        height:55%;
+        border-top:6px solid $highlightsSummer;
+        h3{
+            margin:0;
+        font-size:10vh;
+        color:$highlightsSummer;
+        align-self:flex-end;
+    }
+ 
+}}

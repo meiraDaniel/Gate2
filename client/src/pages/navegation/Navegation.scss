@@ -1,0 +1,161 @@
+@import "../../global.scss";
+
+.navegation--main{
+    position:absolute;
+        background:rgba(36, 75, 82, 0.561);
+        width:100%;
+        height:8%;
+}
+nav{
+    display:flex;
+    width:100%;
+    height:100%;
+    align-items: center;
+    justify-content:space-between;
+    border-bottom: 2px solid $letterWinter;
+    img{
+        width:15%;
+        height:100%;
+   
+}}
+.navegation--rigth-link{
+    display:flex;
+    width:75%;
+    height:100%;
+    align-items:center;
+}
+
+%navegation {
+    font-family:$headline;
+    font-size:1.5vh;
+    margin:1%;
+    text-decoration:none;
+}
+.navegation--links-summer{
+   @extend %navegation ;
+    color:$nude; 
+  
+}
+.navegation--links-winter{
+    @extend %navegation;
+    color:white; 
+
+}
+%navegation--center-overlay{
+    width:100%;
+    height:100vh;
+    position:absolute;
+    z-index:9;
+    background:rgba(36, 75, 82, 0.959);
+    display:flex;
+    justify-content: center;
+}
+.navegation--center-overlay-summer{
+   @extend  %navegation--center-overlay;
+    background:rgba(36, 75, 82, 0.959);
+    
+}
+.navegation--center-overlay-winter{
+    @extend  %navegation--center-overlay;
+    background:rgba(23, 63, 112, 0.931);
+}
+.navegation--center-opendiv-summer{
+    width:80%;
+    height:70%;
+    display:flex;
+    margin-top:10%;
+}
+
+.navegation--center-opendiv-summer>div{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-wrap:wrap;
+}
+.navegation--center-links{
+    width:45%;
+    height:20%;
+    display:flex;
+   margin:1%;
+   align-items: center;
+   box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.52);
+   color:white;
+
+}
+
+.navegation--center-links img{
+    width:30%;
+    height:100%;
+    margin-right: 3%;
+   
+}
+@media only screen and ( min-width:600px) and (max-width:900px){
+    %navegation {
+        font-size:2vh;
+       
+    }  
+    .navegation--rigth-link{
+        width:65%;
+       
+    }
+    nav{
+        img{
+            width:18%;
+            height:100%;
+       
+    }}
+    .navegation--main{
+       
+            height:12%;
+    }
+
+}
+
+@media only screen and ( min-width:901px){
+    %navegation {
+        font-size:3vh;
+       
+    }  
+    .navegation--rigth-link{
+        width:45%;
+        height:100%;
+       
+    }
+    nav{
+        img{
+            width:8%;
+            height:100%;
+       
+    }}
+    .navegation--main{
+       
+            height:12%;
+    }
+    .navegation--center-links{
+        width:25%;
+        height:30%;
+        
+    
+    }
+}
+@media only screen and ( orientation:landscape) and( max-height:500px){
+    %navegation {
+        font-size:3vh;
+       
+    }  
+    .navegation--rigth-link{
+        width:45%;
+        
+
+    }
+    nav{
+        img{
+            width:10%;
+            height:100%;
+       
+    }}
+    .navegation--main{
+       
+            height:12%;
+    }
+}
