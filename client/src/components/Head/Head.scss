@@ -38,12 +38,21 @@
     
 }
 
-.head--center-content h2{
+%head--top-title{
     font-family:$body;
     font-size:3.5vh;
     height:3%;
-    color:$backgroundSummer;
 
+
+}
+.head--top-title-summer{
+    @extend %head--top-title;
+        color:$backgroundSummer;
+
+}
+.head--top-title-winter{
+    @extend %head--top-title;
+        color:$letterWinter;
 
 }
 
@@ -62,6 +71,21 @@
 }
 
 @media only screen and (min-width:800px){
+    .head--center-content{
+        width:45%;
+        height:65%;
+        
+    }  
+}
+
+@media only screen and (min-width:1024px)and(max-width:1366px){
+    .head--center-content{
+        width:65%;
+        height:45%;
+        
+    }  
+}
+@media only screen and (orientation:landscape){
     .head--center-content{
         width:45%;
         height:65%;

@@ -8,21 +8,21 @@ import "./LandingPage.scss";
 const pages = [beach, cabin];
 
 function LandingPage({ togleSummer }) {
-    const index =useRef(0)
+  const index = useRef(0);
   const [animating, setAnimating] = useState(false);
   const [{ x }, set] = useSpring(() => ({
-    x: [0, 0]
+    x: [0, 0],
   }));
 
-  const bind= useDrag(({movement:[mx]})=>{
-    let moveX= (mx/window.innerHeight)*100
+  const bind = useDrag(({ movement: [mx] }) => {
+    let moveX = (mx / window.innerHeight) * 100;
 
     set({
-        x:[moveX,0]
-    })
-  })
+      x: [moveX, 0],
+    });
+  });
   return (
-    <animated.div {...bind()} className="landing--main" >
+    /*  <animated.div {...bind()} className="landing--main" >
       {pages.map((e,i) => (
           <div className='testdiv'>
         <animated.div  style={{transform:x.interpolate(value =>`translate3d(${value}%,0px,0px)`), backgroundImage:`url(${pages[i]})`}} > 
@@ -30,7 +30,21 @@ function LandingPage({ togleSummer }) {
         </animated.div>
         </div>
       ))}
-    </animated.div>
+    </animated.div> */
+
+    <div>
+      <button
+        className="landing--button"
+        onClick={() => {
+          togleSummer(true);
+        }}
+      >
+        Summer
+      </button>
+      <button className="landing--button" onClick={() => togleSummer(false)}>
+        Winter
+      </button>
+    </div>
   );
 }
 

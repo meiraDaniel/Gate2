@@ -4,6 +4,7 @@ import "./Navegation.scss";
 import { dataSummer, dataWinter } from "../../data";
 import { MyContext } from "../../Context/Context";
 import logo from '../../images/logo.png'
+import icon from '../../images/boat.svg'
 
 function LandingPage({ toogleSummer }) {
   
@@ -13,6 +14,7 @@ function LandingPage({ toogleSummer }) {
   const [data, setData] = useState([]);
   const [allPlaces,setAllPlaces] =useState([])
 const [allActivities,setAllActivities] =useState([])
+const[flag,set] =useState(false)
 
   useEffect(() => {
       setData(isSummer ? dataSummer : dataWinter);
@@ -39,6 +41,7 @@ const [allActivities,setAllActivities] =useState([])
      */
     const handleOnMouseEnter = (session) => {
     setLink(session);
+    set(true)
   };
 
   /**
@@ -63,38 +66,47 @@ const [allActivities,setAllActivities] =useState([])
   };
 
   return (
-    <main className="navegation--main">
+    <main onMouseLeave={()=>set(false)} className="navegation--main">
       <nav>
-        <img src={logo} alt=""/>
+        <img src={logo} alt=""  onMouseEnter={() =>set(false)} onClick={()=>set(false)}/>
+        <div className="navegation--rigth-link">
         <h3  className={isSummer?"navegation--links-summer":"navegation--links-winter"} onMouseEnter={() => handleOnMouseEnter("destination")}>
           {" "}
-          Destinations{" "} 
+          Destinations |{" "} 
         </h3> 
         <h3 className={isSummer?"navegation--links-summer":"navegation--links-winter"}  onMouseEnter={() => handleOnMouseEnter("activities")}>
           {" "}
-           Activities{" "}
+           Activities |{" "}
         </h3>
-        <NavLink className={isSummer?"navegation--links-summer":"navegation--links-winter"} to="/aboutus"> About us</NavLink>
+        <NavLink className={isSummer?"navegation--links-summer":"navegation--links-winter"} to="/aboutus"> About us |</NavLink>
         <NavLink className={isSummer?"navegation--links-summer":"navegation--links-winter"}  to="/contact"> Contact </NavLink>
+        </div>
       </nav>
-      <section className={isSummer?"navegation--center-opendiv-summer":"navegation--center-opendiv-winter"} >
-        {link === "destination"? data.length>0 ? (
-          <div>
+     { flag? <section className={isSummer?"navegation--center-overlay-summer":"navegation--center-overlay-winter"} >
+        <div className="navegation--center-opendiv-summer">
+        
+        {link === "destination"? 
+         <div>
             {allPlaces.map((e,i) => (
+              <div className="navegation--center-links">
+              <img src={icon} alt="ship"/>
               <h3  key={i} onClick={() => handlePlace(e)}>{e}</h3>
-            ))}
-          </div>
-        ) : <h3>Loading</h3>:null}
-        {link === "activities" ? data.length>0 ? (
-          <div>
+              </div>
+            ))}</div>
+                : link === "activities" ? 
+                <div>       
             {allActivities.map((e,i) => (
+              <div className="navegation--center-links">
+              <img src={icon} alt="ship"/>
               <h3 key={i} onClick={() => handleActivities(e)}>
                 {e}
               </h3>
-            ))}
-          </div>
-        ) : <h3>Loading</h3>:null}
-      </section>
+              </div>
+            ))}</div>
+          :null}
+      
+        </div>
+      </section>:null}
     </main>
   );
 }

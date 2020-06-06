@@ -1,0 +1,51 @@
+@import '../../global.scss';
+
+.highlights--main{
+    width: 100%;
+    height:165vh;
+    display:flex;
+    flex-direction:column;
+}
+.highlights--left-box{
+    width:100%;
+    height:50%;
+background:$backgroundSummer;
+
+}
+
+.highlights--right-cards{
+    width:100%;
+    height:70%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+  position:absolute;
+    top:130%;
+}
+
+
+
+
+
+@media only screen and ( min-width:750px){
+.highlights--main{
+    width: 100%;
+    height:100vh;
+    display:flex;
+    flex-direction:row;
+}
+.highlights--left-box{
+    width:35%;
+    height:65%;
+   align-self:flex-end;
+background:$backgroundSummer;
+}
+
+.highlights--right-cards{
+    width:65%;
+    height:100%;
+    display:flex;
+    align-items: center;
+    top:115%;
+    left:20%;
+}}

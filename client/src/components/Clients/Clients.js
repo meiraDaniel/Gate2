@@ -1,11 +1,14 @@
-import React, { useState} from "react";
+import React, { useState,useContext} from "react";
 import { client } from "../../data";
 import Carrosel from "../Carrossel/Carrossel"
 import Arrow from "../Carrossel/Arrow"
+import "./Clients.scss"
+import { MyContext } from "../../Context/Context";
 
 function Clients() {
-  const [data] = useState(client.sort(() => Math.random() - 0.5));
+  const [data] = useState(client);
   const [currentInd,setCurrentInd]= useState(0)
+  const { isSummer} = useContext(MyContext);
 
  /**
   * @function previousSlide
@@ -14,12 +17,8 @@ function Clients() {
  
 
   const previousSlide=()=>{
-    const lastIndex =data.length-1
-    const shouldResetIndex = setCurrentInd(0);
-    const index =  shouldResetIndex ? lastIndex : currentInd - 1;
-
-
-    setCurrentInd(index)
+    if(currentInd<=data.length) setCurrentInd(data.length-1);
+    else  setCurrentInd(currentInd - 1)
 }
 
 /**
@@ -27,25 +26,25 @@ function Clients() {
   * @return set the index value to [...current index] +1
   */
 const nextSlide=()=>{
-    const lastIndex =data.length-1
-    const shouldResetIndex = setCurrentInd(0);
-    const index =  shouldResetIndex ? lastIndex : currentInd + 1;
-
-
-    setCurrentInd(index)
+ 
+    if(currentInd>=data.length-1) setCurrentInd(0);
+     else  setCurrentInd(currentInd + 1)
 }
 
+
   return (
-    <div>
+    <div className={isSummer?"clients--main-summer":"clients--main-winter"}>
+      < div className={isSummer?"clients--center-carrossel-summer":"clients--center-carrossel-winter"}>
         <Arrow
           direction="left"
           clickFunction={ previousSlide }
-          glyph="&#8592;" />
+          glyph="&#8678;" />
      <Carrosel data={data[currentInd]}  />
      <Arrow
-          direction="left"
+          direction="rigth"
           clickFunction={ nextSlide }
-          glyph="&#8594;" />
+          glyph="&#8680;" />
+    </div>
     </div>
   );
 }

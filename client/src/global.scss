@@ -19,10 +19,20 @@ $darkGray:#4D6D78;
 $headline: 'Lora', serif;
 $body: 'Merriweather', serif;
 
-.button--big{
+%button--big{
     background:#244B52;
     color:$nude;
     box-shadow:6px -6px 10px rgba(0, 0, 0, 0.397);
     font-family:$headline;
+    cursor:pointer;
+}
+%button--small{
+    color:white;
+    box-shadow:6px -6px 10px rgba(245, 245, 245, 0.205);
+    border:none;
+    font-size:100%;
+    font-family:$headline;
+    cursor:pointer;
+
 }
 

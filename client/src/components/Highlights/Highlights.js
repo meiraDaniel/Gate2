@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { dataSummer, dataWinter } from "../../data";
 import { MyContext } from "../../Context/Context";
+import "./Highlights.scss"
+import Card from './Cards'
 
 function Highlights() {
   const { isSummer} = useContext(MyContext);
@@ -16,14 +18,13 @@ function Highlights() {
   }, [data]);
 
   return (
-    <div>
+    <div className="highlights--main">
+      <div className="highlights--left-box"></div>
+      <div className="highlights--right-cards">
       {selectedData.map((destination,i) => (
-        <div key={i}>
-          <h1>{destination.place}</h1>
-          <h2>{destination.activities}</h2>
-          <h3>{destination.pricePerDay}</h3>
-        </div>
+      <Card destination={destination} i={i}/>
       ))}
+      </div>
     </div>
   );
 }
