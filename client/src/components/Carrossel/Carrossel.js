@@ -21,7 +21,7 @@ set(card)
         <div>
           <img src={data.img} alt="client" />
           <div className="stars">
-          {star.map(e => <span>&#9733;</span>)}
+          {star.map((e,i) => <span  key={i} >&#9733;</span>)}
          
           </div>
           <h1>{data.name}</h1>

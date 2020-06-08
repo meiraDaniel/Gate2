@@ -59,8 +59,14 @@
     width:30%;
     height: 30%;
     display:flex;
+    cursor:pointer;
   
 }
+
+.slide-arrow:hover{
+    color:black;
+}
+
 .carrossel-bottom-description{
     h2{
         margin:0;

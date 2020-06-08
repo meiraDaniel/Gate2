@@ -1,0 +1,79 @@
+@import "../../global.scss";
+
+
+%form--main{
+   
+    width:75%;
+    height:65%;
+    box-shadow:-6px 6px 10px black;
+    border-radius:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    input{
+        background:transparent;
+        border: 2px solid $backgroundSummer;
+        border-radius:30px;
+    padding:5%;
+    margin:2%;
+    color:white;
+    }
+    input:focus{
+        outline:none;
+        box-shadow: inset 1px 0  100px  $backgroundSummer;
+        transition: .5s ease
+    
+    }
+    input[type=submit]{
+        border-radius:0px;
+        background:$backgroundSummer;
+    
+    }
+    input[type=submit]:hover{
+     color:$nude;
+    
+    }
+}
+
+.form-main-summer{
+    @extend %form--main;
+    background:$letterSummer;
+    h1{
+        color:$backgroundSummer;
+    }
+}
+.form-main-winter{
+    @extend %form--main;
+    background:$mainBackgroundWinter;
+    h1{
+        color:$backgroundSummer;
+    }
+}
+
+
+#form-message{
+    height:40%;
+}
+@media only screen and (min-width:700px){
+    %form--main{
+   margin-top:5%;
+        width:40%;
+        height:75%;
+        input{
+        width:60%;
+        padding:0 3% 0 3%;
+        height: 15%;
+        font-size:100%;
+        
+        
+        }
+    
+        h1{
+            font-size:5vh;
+        }
+        input[type=submit]{
+          width:30%;
+        
+        }}
+}

@@ -22,7 +22,7 @@ function Highlights() {
       <div className="highlights--left-box"></div>
       <div className="highlights--right-cards">
       {selectedData.map((destination,i) => (
-      <Card destination={destination} i={i}/>
+      <Card key={i} destination={destination} i={i}/>
       ))}
       </div>
     </div>
