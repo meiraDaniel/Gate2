@@ -8,10 +8,10 @@ const Head = props => {
         <div className={isSummer?"head--main--summer":"head--main--winter"}>
             <div className="head--container">
                 <div className="head--center-content">
-                <h2>lorem isum pdj</h2>
-                <div className="head--center-title">
-                    <h1>Place</h1>
-                </div>
+                    <h2>lorem isum pdj</h2>
+                    <div className="head--center-title">
+                        <h1>Place</h1>
+                    </div>
                 </div>
             </div>
         </div>
