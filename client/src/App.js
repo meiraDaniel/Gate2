@@ -1,9 +1,13 @@
 import React,{useContext} from 'react';
 import './App.scss';
+
 import { Switch,Route,useHistory} from "react-router-dom";
+
 import LandingPage from './pages/Landing/LandingPage'
 import Home from './pages/Home/Home'
 import Navegation from './pages/navegation/Navegation'
+import Destinations from './pages/Destinations/Destinations'
+
 import {MyContext} from './Context/Context'
 import About from './pages/About/About'
 import Contact from './pages/Contact/Contact'
@@ -29,8 +33,11 @@ function App() {
          <LandingPage  togleSummer={togleSummer} />
        </Route>
        <Route path="/home">
-       <Navegation/>
-      <Home/>
+        <Navegation/>
+        <Home/>
+       </Route>
+       <Route path='/destinations'>
+         <Destinations />         
        </Route>
        <Route path="/about">
        <Navegation/>

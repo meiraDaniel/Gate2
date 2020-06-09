@@ -5,10 +5,11 @@ import { dataSummer, dataWinter } from "../../data";
 import { MyContext } from "../../Context/Context";
 import logo from "../../images/logo.png";
 import icon from "../../images/boat.svg";
+import { useSpring, animated } from "react-spring";
 
 function LandingPage({ toogleSummer }) {
   const [link, setLink] = useState("");
-  const { isSummer, setDestinations,setIsSummer} = useContext(MyContext);
+  const { isSummer, setDestinations, setIsSummer } = useContext(MyContext);
 
   const [data, setData] = useState([]);
   const [allPlaces, setAllPlaces] = useState([]);
@@ -66,24 +67,45 @@ function LandingPage({ toogleSummer }) {
       destinations: data.filter((e) => e.activities === selectedActivity),
     });
   };
-  const toggleSummer =() =>{
-    setIsSummer({type:'CHOOSE_SEASON',isSummer:!isSummer})
-    console.log(isSummer)
 
-  }
+  const { transform, opacity } = useSpring({
+    opacity: isSummer ? 1 : 0,
+    transform: `perspective(600px) rotateX(${isSummer ? 180 : 0}deg)`,
+    config: { mass: 5, tension: 500, friction: 80 },
+  });
+
+  const toggleSummer = () => {
+    setIsSummer({ type: "CHOOSE_SEASON", isSummer: !isSummer });
+  };
 
   return (
     <main onMouseLeave={() => set(false)} className="navegation--main">
       <nav>
         <div className="navegation-left">
-        <img
-          src={logo}
-          alt="logo"
-          id="logo"
-          onMouseEnter={() => set(false)}
-          onClick={() => history.push("/home")}
-        />
-        {isSummer?<h2 className="navegation-summer" onClick={toggleSummer}>Winter</h2>:<h2  onClick={toggleSummer}className="navegation-winter" >Summer</h2>}
+          <img
+            src={logo}
+            alt="logo"
+            id="logo"
+            onMouseEnter={() => set(false)}
+            onClick={() => history.push("/home")}
+          />
+          <div className="season" onClick={toggleSummer}>
+            <animated.div 
+              className="navegation-winter"
+              style={{ opacity: opacity.interpolate((o) => 1 - o), transform, position:'absolute'}}
+            >
+              <h2 >Summer</h2>
+            </animated.div>
+            <animated.div
+              className="navegation-summer"
+              style={{
+                opacity,
+                transform: transform.interpolate((t) => `${t} rotateX(180deg)`), position:'absolute'
+              }}
+            >
+              <h2>Winter</h2>
+            </animated.div>
+          </div>
         </div>
         <div className="navegation--rigth-link">
           <h3
