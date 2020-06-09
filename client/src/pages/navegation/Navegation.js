@@ -159,7 +159,7 @@ function LandingPage({ toogleSummer }) {
           {link === "destination" ? (
             <div>
               {allPlaces.map((e, i) => (
-                <div className="navegation--center-links">
+                <div className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
                   <img src={icon} alt="ship" />
                   <h3 key={i} onClick={() => handlePlace(e)}>
                     {e}
@@ -170,7 +170,7 @@ function LandingPage({ toogleSummer }) {
           ) : link === "activities" ? (
             <div>
               {allActivities.map((e, i) => (
-                <div className="navegation--center-links">
+                <div className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
                   <img src={icon} alt="ship" />
                   <h3 key={i} onClick={() => handleActivities(e)}>
                     {e}

@@ -47,6 +47,7 @@ function App() {
        <Navegation/>
       <Contact/>
        </Route>
+     
      </Switch>
     </div>
   );

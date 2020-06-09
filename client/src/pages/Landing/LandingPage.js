@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useSpring, animated } from "react-spring";
-import { useDrag } from "react-use-gesture";
-import beach from "../../images/backgroundSummer.jpg";
+import beach from "../../images/ladingpageback.jpg";
 import cabin from "../../images/cabinCold.jpg";
 import "./LandingPage.scss";
 import { MyContext } from "../../Context/Context";
@@ -16,11 +15,11 @@ const [flag,set] =useState(false)
   const { transform, opacity } = useSpring({
     opacity: flag ? 1 : 0,
     transform: `perspective(600px) rotateX(${flag ? 180 : 0}deg) scale(1)`,
-    config: { mass: 5, tension: 500, friction: 80 },
+    config: { mass: 5, tension: 500, friction: 100 },
   });
 
-/*   useInterval(()=>set(!flag),5000)
- */
+   useInterval(()=>set(!flag),4000)
+
   return (
     <div  className="landing--main" onClick={() => set(!flag)} >
     <animated.div 
@@ -39,7 +38,7 @@ const [flag,set] =useState(false)
           togleSummer(true);
         }}
       >
-        Summer
+        Beach
       </button>
     </animated.div>
     <animated.div
@@ -55,7 +54,7 @@ const [flag,set] =useState(false)
       }}
     >
     <button className="landing--button" onClick={() => togleSummer(false)}>
-        Winter
+        Mountain
       </button>
     </animated.div>
   </div>

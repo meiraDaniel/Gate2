@@ -57,11 +57,11 @@
 }
 
 .head--center-title{
-    background-color: rgba(0, 0, 0, 0.137);
+    background-color: rgba(0, 0, 0, 0.219);
     width:99%;
     height:85%;
     font-family:$headline;
-    font-size:7.5vh;
+    font-size:5.5vh;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -75,6 +75,12 @@
         width:45%;
         height:65%;
         
+    } 
+    .head--center-title{
+      
+       h1{font-size:13vh;} 
+      
+    
     }  
 }
 
@@ -83,7 +89,8 @@
         width:65%;
         height:45%;
         
-    }  
+    } 
+    
 }
 @media only screen and (orientation:landscape){
     .head--center-content{
@@ -91,4 +98,5 @@
         height:65%;
         
     }  
+   
 }

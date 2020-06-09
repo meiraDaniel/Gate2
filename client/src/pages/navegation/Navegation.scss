@@ -62,12 +62,12 @@ opacity: 0;
 }
 .navegation--center-overlay-summer{
    @extend  %navegation--center-overlay;
-    background:rgba(36, 75, 82, 0.959);
+    background:rgba(36, 75, 82, 0.829);
     
 }
 .navegation--center-overlay-winter{
     @extend  %navegation--center-overlay;
-    background:rgba(23, 63, 112, 0.931);
+    background:rgba(23, 63, 112, 0.719);
 }
 .navegation--center-opendiv-summer{
     width:80%;
@@ -82,7 +82,7 @@ opacity: 0;
     display:flex;
     flex-wrap:wrap;
 }
-.navegation--center-links{
+%navegation--center-links{
     width:45%;
     height:20%;
     display:flex;
@@ -91,9 +91,18 @@ opacity: 0;
    box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.52);
    color:white;
    cursor:pointer;
+  
    
 }
-.navegation--center-links:hover{
+.navegation--center-links-summer{
+    @extend  %navegation--center-links;
+    background:rgb(36, 75, 82);
+}
+.navegation--center-links-winter{
+    @extend  %navegation--center-links;
+    background:rgb(23, 63, 112);
+}
+%navegation--center-links:hover{
     box-shadow: inset -1px 1px 100px rgba(255, 255, 255, 0.568);
 
 }
@@ -173,7 +182,7 @@ opacity: 0;
        
             height:12%;
     }
-    .navegation--center-links{
+    %navegation--center-links{
         width:25%;
         height:30%;
         
@@ -194,7 +203,7 @@ opacity: 0;
         
 
     }
-    .navegation--center-links{
+    %navegation--center-links{
         img{
             width:10%;
             height:100%;
@@ -215,7 +224,7 @@ opacity: 0;
         height:100%;
        
     }
-    .navegation--center-links{
+    %navegation--center-links{
         width:25%;
         height:30%;
         
