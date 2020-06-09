@@ -8,9 +8,9 @@ const Head = props => {
         <div className={isSummer?"head--main--summer":"head--main--winter"}>
             <div className="head--container">
                 <div className="head--center-content">
-                <h2 className={isSummer?"head--top-title-summer":"head--top-title-winter"}>lorem isum pdj</h2>
+                <h2 className={isSummer?"head--top-title-summer":"head--top-title-winter"}>Welcome to </h2>
                 <div className="head--center-title">
-                    <h1>Place</h1>
+                    <h1>New Zealand</h1>
                 </div>
                 </div>
             </div>
