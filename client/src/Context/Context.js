@@ -13,7 +13,7 @@ export const Provider  = props =>{
 
 
     useEffect(()=>{
-    localStorage.setItem("isSummer", JSON.stringify(isSummer))
+        localStorage.setItem("isSummer", JSON.stringify(isSummer))
     },[isSummer])
 
     
