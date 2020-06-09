@@ -1,10 +1,20 @@
 import React,{useState, useEffect} from "react";
+import {useTransition,animated} from 'react-spring'
 
 export default function Carrosel({ data }) {
   const[ star,set]=useState([])
 
-useEffect(()=>{
+  
+  const transition = useTransition(data, item=>item.id,{
+    from: { transform:"scale(0)", transition:'ease',position:'relative', left:'10%', opacity:0,display:'flex'},
+    enter: { transform:"scale(1)", transition:'ease',position:'relative',  left:'0%',opacity:1 },
+    leave: { transform:"scale(0)", position:'relative', left:'-40%', transition:'ease', opacity:0},
+  })
+
+
+  useEffect(()=>{
   handleStar()
+
 },[data])
 
 const handleStar=()=>{
@@ -13,24 +23,24 @@ const handleStar=()=>{
     card[i] = (1);
 }
 set(card)
-}
+} 
 
   return (
     <div className="carrossel--main">
-      {data ? (
-        <div>
+      {data ? transition.map(({item,props,key}) =>
+        <animated.div key={key} style={props}>
           <img src={data.img} alt="client" />
-          <div className="stars">
-          {star.map((e,i) => <span  key={i} >&#9733;</span>)}
+          <div className="stars">         
+            {star.map((e,i) => <span  key={i} >&#9733;</span>)}
          
-          </div>
+       </div>
           <h1>{data.name}</h1>
          
           <div className="carrossel-bottom-description">
             <h2>{data.place}</h2>
             <p>{data.description}</p>
           </div>
-        </div>
+        </animated.div>
       ) : null}
     </div>
   );

@@ -31,6 +31,9 @@ nav{
     margin:1%;
     text-decoration:none;
 }
+%navegation:hover{
+    text-decoration: underline;
+}
 .navegation--links-summer{
    @extend %navegation ;
     color:$nude; 
@@ -102,12 +105,17 @@ opacity: 0;
     width:30%;
     height:100%;
     img{
-        width: 25%;
+        width: 45%;
         height:100%;
         margin-right: 3%;
        
     }
 
+}
+.season{
+    display:flex;
+    align-items:center;
+    h2{font-size:1.5vh;}
 }
 .navegation-summer{
     color:$letterWinter;
@@ -119,6 +127,8 @@ opacity: 0;
 
 
 }
+
+
 @media only screen and ( min-width:600px) and (max-width:900px){
     %navegation {
         font-size:2vh;
@@ -138,8 +148,14 @@ opacity: 0;
            
         }
     }
+    .navegation-left{
+        
+        img{
+            width: 45%;}
+            h2{font-size:2.5vh;}
+}}
 
-}
+
 
 @media only screen and ( min-width:901px) and (max-width:1366px){
     %navegation {

@@ -24,14 +24,14 @@ export const dataSummer = [
   ];
 
   export const client = [
-      {name:"User1", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client1,stars: 3, place:"BH"},
-      {name:"User2", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client2,stars: 4, place:"RS"},
-      {name:"User3", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client1,stars: 5, place:"Polo Norte"},
-      {name:"User4", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client2,stars: 3, place:"Polo Norte 3"},
-      {name:"User5", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client1,stars: 4, place:"RS"},
-      {name:"User6", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client3,stars: 5, place:"Rj"},
-      {name:"User7", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client2,stars: 5, place:"Polo Norte"},
-      {name:"User8", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client3,stars: 5, place:"BH"}
+      {id:1,name:"User1", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client1,stars: 3, place:"BH"},
+      { id:2,name:"User2", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client2,stars: 4, place:"RS"},
+      { id: 3,name:"User3", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client1,stars: 5, place:"Polo Norte"},
+      { id: 4,name:"User4", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client2,stars: 3, place:"Polo Norte 3"},
+      { id: 5,name:"User5", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client1,stars: 4, place:"RS"},
+      { id: 6,name:"User6", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client3,stars: 5, place:"Rj"},
+      { id: 7,name:"User7", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client2,stars: 5, place:"Polo Norte"},
+      { id: 8,name:"User8", description:"Create a method 'random_select' which, when given an array of elements (array) and a number (n)", img:client3,stars: 5, place:"BH"}
 
 
 
