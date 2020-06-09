@@ -71,12 +71,20 @@ align-self:flex-end;
 background:$nude;
 
 }
+
+.button--small-summer:hover{
+    color:$backgroundSummer
+}
 .button--small-winter{
     @extend %button--small;
     width:100%;
     height:15%;
     align-self:flex-end;
     background:$backgroundWinter
+}
+
+.button--small-winter:hover{
+    color:$darkGray;
 }
 
 @media only screen and (min-width:750px){

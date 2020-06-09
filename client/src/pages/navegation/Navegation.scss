@@ -49,6 +49,12 @@ nav{
     background:rgba(36, 75, 82, 0.959);
     display:flex;
     justify-content: center;
+    transition: 0.6s ease-in-out;
+}
+.close{
+    @extend  %navegation--center-overlay;
+opacity: 0;
+    height:0vh;  
 }
 .navegation--center-overlay-summer{
    @extend  %navegation--center-overlay;
@@ -80,14 +86,38 @@ nav{
    align-items: center;
    box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.52);
    color:white;
+   cursor:pointer;
+   
+}
+.navegation--center-links:hover{
+    box-shadow: inset -1px 1px 100px rgba(255, 255, 255, 0.568);
 
 }
-
-.navegation--center-links img{
+#logo{
+    cursor:pointer;
+}
+.navegation-left{
+    display:flex;
+    align-items:center;
     width:30%;
     height:100%;
-    margin-right: 3%;
-   
+    img{
+        width: 25%;
+        height:100%;
+        margin-right: 3%;
+       
+    }
+
+}
+.navegation-summer{
+    color:$letterWinter;
+    cursor:pointer;
+} 
+.navegation-winter{
+    color:$nude;
+        cursor:pointer;
+
+
 }
 @media only screen and ( min-width:600px) and (max-width:900px){
     %navegation {
@@ -98,35 +128,30 @@ nav{
         width:65%;
        
     }
-    nav{
-        img{
-            width:18%;
-            height:100%;
-       
-    }}
+  
     .navegation--main{
        
             height:12%;
+            img{
+                width:18%;
+                height:100%;
+           
+        }
     }
 
 }
 
-@media only screen and ( min-width:901px){
+@media only screen and ( min-width:901px) and (max-width:1366px){
     %navegation {
-        font-size:3vh;
+        font-size:2vh;
        
     }  
     .navegation--rigth-link{
-        width:45%;
+        width:65%;
         height:100%;
        
     }
-    nav{
-        img{
-            width:8%;
-            height:100%;
-       
-    }}
+   
     .navegation--main{
        
             height:12%;
@@ -135,7 +160,11 @@ nav{
         width:25%;
         height:30%;
         
-    
+        img{
+            width:8%;
+            height:100%;
+       
+    }
     }
 }
 @media only screen and ( orientation:landscape) and( max-height:500px){
@@ -148,7 +177,7 @@ nav{
         
 
     }
-    nav{
+    .navegation--center-links{
         img{
             width:10%;
             height:100%;
@@ -158,4 +187,29 @@ nav{
        
             height:12%;
     }
+}
+@media only screen and (min-width:1366px){
+    %navegation {
+        font-size:3vh;
+       
+    }  
+    .navegation--rigth-link{
+        width:35%;
+        height:100%;
+       
+    }
+    .navegation--center-links{
+        width:25%;
+        height:30%;
+        
+        img{
+            width:30%;
+            height:100%;
+       
+    }}
+    .navegation--main{
+       
+            height:12%;
+    }
+
 }
