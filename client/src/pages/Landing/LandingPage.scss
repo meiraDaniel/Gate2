@@ -32,9 +32,15 @@
      width:80%;
      height:30%;
      font-size:10vh;
-     background:rgba(255, 255, 255, 0.623);
+     background:rgba(255, 255, 255, 0.493);
      border:none;
      font-family:$headline;
      box-shadow:-6px 6px 10px black;
-     color:$nude;
+     color:$backgroundWinter;
    }
+
+   @media only screen and (min-width:1000px){
+     .landing--button{
+      width:55%;
+      height:40%;
+   }}

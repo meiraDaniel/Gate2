@@ -23,6 +23,7 @@ nav{
     width:75%;
     height:100%;
     align-items:center;
+    cursor:pointer;
 }
 
 %navegation {
@@ -227,5 +228,18 @@ opacity: 0;
        
             height:12%;
     }
-
+    .navegation-left{
+      
+        img{
+            width: 25%;
+            height:100%;
+            margin-right: 3%;
+           
+        }
+    
+    }
+    .season{
+       
+        h2{font-size:3vh;}
+    }
 }
