@@ -7,6 +7,7 @@ import "./Home.scss"
 import { MyContext } from "../../Context/Context";
 import NewsLetter from '../../components/NewsLetter/NewsLetter'
 import Footer from '../../components/Footer/Footer'
+import Place from '../../components/Place/Place'
 
 function Home (){
   const { isSummer} = useContext(MyContext);
@@ -16,9 +17,11 @@ function Home (){
           <Head/>
           <Filter/>
           <Hightlights/>
+          <Place/>
           <Clients/>
           <NewsLetter/>
           <Footer/>
+
         </div>
     )
 }

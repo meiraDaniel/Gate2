@@ -80,7 +80,7 @@ function LandingPage({ toogleSummer }) {
 
   return (
     <main onMouseLeave={() => set(false)} className="navegation--main">
-      <nav>
+      <nav className={isSummer?"nav-summer":"nav-winter"}>
         <div className="navegation-left">
           <img
             src={logo}
@@ -94,7 +94,7 @@ function LandingPage({ toogleSummer }) {
               className="navegation-winter"
               style={{ opacity: opacity.interpolate((o) => 1 - o), transform, position:'absolute'}}
             >
-              <h2 >Summer</h2>
+              <h2 >Beach</h2>
             </animated.div>
             <animated.div
               className="navegation-summer"
@@ -103,7 +103,7 @@ function LandingPage({ toogleSummer }) {
                 transform: transform.interpolate((t) => `${t} rotateX(180deg)`), position:'absolute'
               }}
             >
-              <h2>Winter</h2>
+              <h2>Mountain</h2>
             </animated.div>
           </div>
         </div>

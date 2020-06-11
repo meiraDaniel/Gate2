@@ -19,7 +19,7 @@ function Highlights() {
 
   return (
     <div className="highlights--main">
-      <div className="highlights--left-box"></div>
+      <div className={isSummer?"highlights--left-box-summer":"highlights--left-box-winter"}></div>
       <div className="highlights--right-cards">
       {selectedData.map((destination,i) => (
       <Card key={i} destination={destination} i={i}/>

@@ -6,12 +6,19 @@
     display:flex;
     flex-direction:column;
 }
-.highlights--left-box{
+%highlights--left-box{
     width:100%;
     height:50%;
-background:$backgroundSummer;
 
 }
+.highlights--left-box-winter{
+@extend %highlights--left-box;
+background:$backgroundWinter;
+}
+.highlights--left-box-summer{
+    @extend %highlights--left-box;
+    background:$backgroundSummer;
+    }
 
 .highlights--right-cards{
     width:100%;
@@ -34,11 +41,10 @@ background:$backgroundSummer;
     display:flex;
     flex-direction:row;
 }
-.highlights--left-box{
+%highlights--left-box{
     width:35%;
     height:65%;
    align-self:flex-end;
-background:$backgroundSummer;
 }
 
 .highlights--right-cards{

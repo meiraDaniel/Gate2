@@ -4,13 +4,12 @@ import { useForm } from "react-hook-form";
 import { MyContext } from "../../Context/Context";
 
 export default function Form() {
-  const { register, errors, handleSubmit } = useForm();
+  const { register,  handleSubmit } = useForm();
   const { isSummer } = useContext(MyContext);
 
 
   const onSubmit = (value, e) => {
     e.preventDefault();
-    console.log(value);
   };
   return (
     <form className={isSummer?"form-main-summer":"form-main-winter"} onSubmit={handleSubmit(onSubmit)}>
