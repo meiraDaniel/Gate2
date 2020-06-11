@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import "./Navegation.scss";
-import { dataSummer, dataWinter } from "../../data";
 import { MyContext } from "../../Context/Context";
 import logo from "../../images/logo.png";
-import icon from "../../images/boat.svg";
+import surf from "../../images/surf.svg";
+import ski from "../../images/skiing.svg";
+import boat from '../../images/boat.svg'
+
 import { useSpring, animated } from "react-spring";
 
-function LandingPage({ toogleSummer }) {
+function Navegation({ toogleSummer }) {
   const [link, setLink] = useState("");
-  const { isSummer, setDestinations, setIsSummer } = useContext(MyContext);
+  const { isSummer, setDestinations, setIsSummer,tours } = useContext(MyContext);
 
-  const [data, setData] = useState([]);
   const [allPlaces, setAllPlaces] = useState([]);
   const [allActivities, setAllActivities] = useState([]);
   const [flag, set] = useState(false);
@@ -19,20 +20,18 @@ function LandingPage({ toogleSummer }) {
   const history = useHistory();
 
   useEffect(() => {
-    setData(isSummer ? dataSummer : dataWinter);
-  }, [isSummer]);
-
-  useEffect(() => {
     const places = [];
-    data.forEach((item) => places.push(item.place));
+    tours.tours.forEach((item) => places.push(item.place.split(',')[0]));
     setAllPlaces(places.filter((v, i) => places.indexOf(v) === i));
-  }, [data]);
-  useEffect(() => {
-    const activities = [];
+  }, [tours.tours]);
 
-    data.forEach((item) => activities.push(item.activities));
-    setAllActivities(activities.filter((v, i) => activities.indexOf(v) === i));
-  }, [data]);
+  useEffect(() => {
+    const activitie = [];
+    tours.tours.forEach((data) => {
+     data.activities.split(',').forEach(e=>activitie.push(e))
+   })
+   setAllActivities(activitie.filter((v, i) => activitie.indexOf(v) === i).sort(() => Math.random() - 0.5).slice(0, 6))
+  }, [tours.tours]);
 
   /**
    * @function handleOnMouseEnter
@@ -52,7 +51,7 @@ function LandingPage({ toogleSummer }) {
   const handlePlace = (selectedPlace) => {
     setDestinations({
       type: "SELECTED_DESTINATIONS",
-      destinations: data.filter((e) => e.place === selectedPlace),
+      destinations: tours.tours.filter((e) => e.place === selectedPlace),
     });
   };
   /**
@@ -64,7 +63,7 @@ function LandingPage({ toogleSummer }) {
   const handleActivities = (selectedActivity) => {
     setDestinations({
       type: "SELECTED_DESTINATIONS",
-      destinations: data.filter((e) => e.activities === selectedActivity),
+      destinations: tours.tours.filter((e) => e.activities === selectedActivity),
     });
   };
 
@@ -160,7 +159,7 @@ function LandingPage({ toogleSummer }) {
             <div>
               {allPlaces.map((e, i) => (
                 <div className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
-                  <img src={icon} alt="ship" />
+                  <img src={boat} alt="ship" />
                   <h3 key={i} onClick={() => handlePlace(e)}>
                     {e}
                   </h3>
@@ -171,7 +170,7 @@ function LandingPage({ toogleSummer }) {
             <div>
               {allActivities.map((e, i) => (
                 <div className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
-                  <img src={icon} alt="ship" />
+                  <img src={isSummer?surf:ski} alt="ship" />
                   <h3 key={i} onClick={() => handleActivities(e)}>
                     {e}
                   </h3>
@@ -185,4 +184,4 @@ function LandingPage({ toogleSummer }) {
   );
 }
 
-export default LandingPage;
+export default Navegation;

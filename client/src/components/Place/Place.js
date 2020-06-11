@@ -1,19 +1,21 @@
+
+
 import React, { useContext,useState } from "react";
 import { MyContext } from "../../Context/Context";
 import "./Place.scss";
 import { Chart } from "react-google-charts";
-import { key } from "../../key";
+import "dotenv"
 
 export default function Place() {
-  const { isSummer } = useContext(MyContext);
+  const { isSummer,tours } = useContext(MyContext);
   const[selected,setSelected]=useState([])
   const Cities=[
     ['City'],
     ['Auckland'],
     ['Wellington'],
     ['Gisborne'],
-    
-
+     ["Nelson"],
+   
   ]
 
   
@@ -53,13 +55,13 @@ export default function Place() {
           tooltip:{textStyle: {color: '#173F70'}, showColorCode: true},
         }
         }
-        mapsApiKey={key}
+        mapsApiKey={process.env.REACT_APP_SECRET_NAME}
         rootProps={{ "data-testid": "3" }}
       />
       </div>
       <div className="place--description-right">
       <h1>{selected[0]}</h1>
-      <p>balblablabla</p>
+      <p>{tours.tours.filter(e=> e.place.split(',')[0].includes(selected[0]))}</p>
       </div>
     </div>
   );

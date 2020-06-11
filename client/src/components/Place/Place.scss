@@ -4,8 +4,8 @@
     widows: 100%;
     height:90vh;
     margin:5% 0 5% 0;
-    display:flex;
     align-items:center;
+    display:flex;
    
 }
 .place--main-summer{
@@ -34,10 +34,20 @@ cursor:pointer;
     align-items: center;
     justify-content: center;
 flex-direction:column;
+
 p{
     font-size:4vh;
 
 }
 h1{
     font-size:10vh;
-}}
+}
+
+}
+
+
+@media only screen and (max-width:800px){
+    %place--main{
+display:none;
+    }
+}

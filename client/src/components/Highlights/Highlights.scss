@@ -21,7 +21,7 @@ background:$backgroundWinter;
     }
 
 .highlights--right-cards{
-    width:100%;
+    width:80%;
     height:70%;
     display:flex;
     flex-wrap:wrap;
@@ -34,7 +34,7 @@ background:$backgroundWinter;
 
 
 
-@media only screen and ( min-width:750px){
+@media only screen and ( min-width:800px){
 .highlights--main{
     width: 100%;
     height:100vh;

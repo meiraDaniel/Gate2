@@ -9,22 +9,10 @@ import NewsLetter from '../../components/NewsLetter/NewsLetter'
 import Footer from '../../components/Footer/Footer'
 import Place from '../../components/Place/Place'
 
-import axios from 'axios'
-
 function Home (){
   const { isSummer} = useContext(MyContext);
 
-  const { places, setPlaces} = useState([])
 
-  useEffect(() => {
-    const fetchPlaces = async () =>{
-      const res = await axios.get('/places', {params: {isSummer}});
-      console.log(res.data.tours);          
-    }
-
-    fetchPlaces();
-
-  }, [isSummer])
   
     return(
         <div className={isSummer?"main--home-summer":"main--home-winter"}>

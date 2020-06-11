@@ -1,58 +1,58 @@
 import React, { useState, useContext, useEffect } from "react";
-import { dataSummer, dataWinter } from "../../data";
 import { MyContext } from "../../Context/Context";
 import "./Filter.scss";
 
 function Filter() {
 
-  const { isSummer, setDestinations } = useContext(MyContext);
-  const [data, setData] = useState([]);
+  const { isSummer, setDestinations,tours,destinations} = useContext(MyContext);
+
   const [place, setPlace] = useState();
   const [activities, setActivities] = useState();
   const [allPlaces, setAllPlaces] = useState([]);
   const [allActivities, setAllActivities] = useState([]);
 
   useEffect(() => {
-    setData(isSummer ? dataSummer : dataWinter);
-  }, [isSummer]);
-
-  useEffect(() => {
     const places = [];
-    data.forEach((item) => places.push(item.place));
+    tours.tours.forEach((item) => places.push(item.place.split(',')[0]));
     setAllPlaces(places.filter((v, i) => places.indexOf(v) === i));
-  }, [data]);
-  useEffect(() => {
-    const activities = [];
+  }, [tours.tours]);
 
-    data.forEach((item) => activities.push(item.activities));
-    setAllActivities(activities.filter((v, i) => activities.indexOf(v) === i));
-  }, [data]);
+  useEffect(() => {
+    const activitie = [];
+    tours.tours.forEach((data) => {
+     data.activities.split(',').forEach(e=>activitie.push(e))
+   })
+   setAllActivities(activitie.filter((v, i) => activitie.indexOf(v) === i))
+  }, [tours.tours]);
 
   /**
    * @function handleOnClick
    * @return - dispatch an array of objects filtering  values selected by the user
    */
   const handleOnClick = () => {
-    if (activities && place)
+
+
+      if (activities && place)
       setDestinations({
         type: "SELECTED_DESTINATIONS",
-        destinations: data.filter(
-          (e) => e.activities === activities && e.place === place
-        ),
+        destinations: tours.tours.filter(
+          (e) => e.activities.includes(`${activities}`) && e.place.includes(`${place}, New Zealand`))
+        
+    
       });
     if (!activities && place)
       setDestinations({
         type: "SELECTED_DESTINATIONS",
-        destinations: data.filter((e) => e.place === place),
+        destinations: tours.tours.filter(e=>e.place.includes(`${place}, New Zealand`))
       });
     if (activities && !place)
       setDestinations({
         type: "SELECTED_DESTINATIONS",
-        destinations: data.filter((e) => e.activities === activities),
+        destinations: tours.tours.filter((e) => e.activities.includes(`${activities}`))
       });
     if (!activities && !place)
-      setDestinations({ type: "SELECTED_DESTINATIONS", destinations: data });
-  };
+      setDestinations({ type: "SELECTED_DESTINATIONS", destinations: tours.tours })
+}
 
   return (
     <main className="filter--main--top-summer">
@@ -63,7 +63,7 @@ function Filter() {
         name="place"
         id="place"
       >
-        <option value="none">Place</option>
+        <option value="">Place</option>
         {allPlaces.map((e, i) => (
           <option key={i} value={e}>
             {e}
@@ -75,7 +75,7 @@ function Filter() {
         name="place"
         id="place"
       >
-        <option value="none">Activities</option>
+        <option value="" >Activities</option>
         {allActivities.map((e, i) => (
           <option key={i} value={e}>
             {e}
