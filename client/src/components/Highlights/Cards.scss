@@ -1,12 +1,12 @@
 @import '../../global.scss';
 
 %card--main{
-    width:51%;
+    width:41%;
     height:65%;
     display:flex;
     flex-direction:column;
         box-shadow: -7px 7px 15px rgba(0, 0, 0, 0.65);
-        margin-bottom:5%;
+        margin:3%;
       
 }
 
@@ -39,7 +39,7 @@ img{
     margin:5%;
     color:$backgroundSummer;
  h1{
-     font-size:4.5vh;
+     font-size:3vh;
      margin:0;
  }
 
@@ -52,7 +52,7 @@ img{
     border-top:6px solid $highlightsSummer;
     h3{
         margin:0;
-    font-size:7vh;
+    font-size:4vh;
     color:$highlightsSummer;
     align-self:flex-end;
 }
@@ -61,7 +61,23 @@ p{
     font-size:1.5vh;
 }
 }
-
+.saleCard{
+    position:absolute;
+    color:white;
+    width:15%;
+    height:8%;
+    font-size:1.5vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    background:$highlightsSummer;
+}
+.card-top-info{
+    display:flex;
+    font-size:1vh;
+    justify-content: space-evenly;
+}
 
 .button--small-summer{
 @extend %button--small;
@@ -87,7 +103,7 @@ background:$nude;
     color:$darkGray;
 }
 
-@media only screen and (min-width:750px){
+@media only screen and (min-width:800px){
     
 %img{
     width:100%;
@@ -96,7 +112,7 @@ background:$nude;
 }
     %card--main{
         width:30%;
-        height:60%;
+        height:65%;
         margin:1%;
         display:flex;
         flex-direction:column;
@@ -111,9 +127,13 @@ background:$nude;
         border-top:6px solid $highlightsSummer;
         h3{
             margin:0;
-        font-size:10vh;
+        font-size:7.5vh;
         color:$highlightsSummer;
         align-self:flex-end;
     }
  
-}}
+}
+.card-top-info{
+  font-size:2vh;
+}
+}

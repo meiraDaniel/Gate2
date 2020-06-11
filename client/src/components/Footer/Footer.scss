@@ -27,7 +27,7 @@ background:$backgroundWinter;
     display:flex;
     flex-direction:column;
 }
-.footer--left ul  a {
+.footer_link {
     list-style: none;
     color:white;
     font-family: $body;
@@ -36,7 +36,7 @@ background:$backgroundWinter;
     cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
     auto;
 }
-.footer--left ul a:hover{
+.footer_link:hover{
  color:$nude;
  text-decoration:underline $nude;
  transition: 0.3s ease;
@@ -60,7 +60,7 @@ background:$backgroundWinter;
 }
 
 @media only screen  and (min-width:1000px){
-    .footer--left ul  a {
+    .footer_link {
         font-size:2.5vh;
     }
 }

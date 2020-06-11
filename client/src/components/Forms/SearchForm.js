@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-import Slider, { Range } from 'rc-slider'
+import  { Range } from 'rc-slider'
 import 'rc-slider/assets/index.css'
 
 import './Form.scss'
@@ -24,7 +24,7 @@ function SearchForm(props) {
             <div className='search-form__inputs'>
                 <div className='search-form__searchInput'>
                     <input value={props.value} onChange={props.handleChangeInput}/>
-                    <img src={loupeIcon}/>
+                    <img src={loupeIcon} alt=""/>
                 </div>
                 <div className='search-form__dateTravel'>
                     <button onClick={handleToggleTravel}><span>When to travel</span></button>

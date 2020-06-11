@@ -26,3 +26,13 @@ export const userDestinations = (state, action) => {
       return state;
   }
 } 
+
+export const getData = (state, action) => {
+  switch (action.type) {
+    case 'GET_DATA':
+      return {tours:action.tours};
+    default:
+      return state;
+  }
+} 
+

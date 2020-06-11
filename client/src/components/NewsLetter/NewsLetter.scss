@@ -50,6 +50,10 @@ background:$backgroundSummer;
  align-items: center;
  justify-content: center;
  flex-direction:column;
+ p{
+     color:white;
+     font-size:1.5vh;
+ }
 }
 
 .newsletter--top-box label{
@@ -65,8 +69,7 @@ background:$backgroundSummer;
     border-bottom: 2px solid $nude;
     color:$nude;
     transition:1s ease;
-    cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-    auto;
+   
 
 }
 .newsletter--top-box input[type=email]:focus{

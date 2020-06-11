@@ -1,6 +1,6 @@
-import React,{useContext} from 'react';
+import React,{useContext,useEffect,useState} from 'react';
 import './App.scss';
-
+import axios from 'axios'
 import { Switch,Route,useHistory} from "react-router-dom";
 
 import LandingPage from './pages/Landing/LandingPage'
@@ -13,8 +13,9 @@ import About from './pages/About/About'
 import Contact from './pages/Contact/Contact'
 
 function App() {
- const {setIsSummer}= useContext(MyContext)
+ const {isSummer, setIsSummer,setTours,tours}= useContext(MyContext)
  const history=useHistory()
+
 /**
  * @function togleSummer
  * @param {boolean} e  - the value selected by the user 
@@ -25,6 +26,11 @@ function App() {
   history.push("/home")
 
  }
+
+ useEffect(() => {
+  axios.get('/places', {params: {isSummer}}).then(res=>   setTours({type:'GET_DATA',tours:res.data.tours}))
+}, [isSummer])
+
   return (
     <div className="App--main">
     
