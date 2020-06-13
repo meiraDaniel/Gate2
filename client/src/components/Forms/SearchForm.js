@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 import  { Range } from 'rc-slider'
 import 'rc-slider/assets/index.css'
@@ -10,9 +10,9 @@ import SliderForm from './SliderForm'
 import loupeIcon from '../../icons/loupe.svg'
 
 function SearchForm({inputValue, handleChangeInput, rangeMin, rangeMax, handleChangePrice, highPrice, lowPrice, isLoading}) {
-    const [travel, setTravel] = useState(false)
+    const [travel] = useState(false)
 
-    function handleToggleTravel() {
+/*     function handleToggleTravel() {
         setTravel(!travel);
     }
    
@@ -22,7 +22,7 @@ function SearchForm({inputValue, handleChangeInput, rangeMin, rangeMax, handleCh
     }
 
     useEffect(() => {}, [isLoading])
-    
+     */
     
    
     return (
@@ -31,11 +31,11 @@ function SearchForm({inputValue, handleChangeInput, rangeMin, rangeMax, handleCh
             <div className='search-form__inputs'>
                 <div className='search-form__searchInput'>
                     <input value={inputValue} onChange={handleChangeInput}/>
-                    <img src={loupeIcon}/>
+                <img src={loupeIcon} alt=""/>
                 </div>
                 <div className='search-form__dateTravel'>
-                    <button onClick={handleToggleTravel}><span>When to travel</span></button>
-                    <ul className={travel ? 'search-form__dateTravel__activated' : 'search-form__dateTravel__notActivated'}>
+{/*                     <button onClick={handleToggleTravel}><span>When to travel</span></button>
+ */}                    <ul className={travel ? 'search-form__dateTravel__activated' : 'search-form__dateTravel__notActivated'}>
                         <li><button><span>Teste</span></button></li>
                     </ul>
                 </div>

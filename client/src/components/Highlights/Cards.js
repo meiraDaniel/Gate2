@@ -6,7 +6,7 @@ import { MyContext } from "../../Context/Context";
 
 export default function Card({destination,i}){
 
-    const { isSummer,setDestinations,destinations} = useContext(MyContext);
+    const { isSummer,setDestinations} = useContext(MyContext);
 
     const handleOnClick=()=>{
       setDestinations({
@@ -15,7 +15,6 @@ export default function Card({destination,i}){
     
       })
     }
-    console.log(destinations)
 
     return(
     

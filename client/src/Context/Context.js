@@ -9,7 +9,9 @@ export const Provider  = props =>{
         const localData = localStorage.getItem('isSummer');
         return localData ? JSON.parse(localData) : []; 
     } );
-    const[destinations,setDestinations] =useReducer(userDestinations,[]);
+    const[destinations,setDestinations] =useReducer(userDestinations,[],()=>{
+        const localData = localStorage.getItem('destinations');
+        return localData ? JSON.parse(localData) : []; })
    
     const [tours,setTours] =useReducer(getData,[],()=>{
         const localData = localStorage.getItem('tours');
@@ -22,6 +24,10 @@ export const Provider  = props =>{
     
     useEffect(()=>{
         localStorage.setItem("tours", JSON.stringify(tours))
+    },[tours])
+    
+    useEffect(()=>{
+        localStorage.setItem("destinations", JSON.stringify(destinations))
     },[tours])
     
 return(

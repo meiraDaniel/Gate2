@@ -29,7 +29,7 @@ export default function Carrosel({ data }) {
     <div className="carrossel--main">
       {data ? transition.map(({item,props,key}) =>
         <animated.div key={key} style={props}>
-          <img src={data.img} alt="client" />
+          <img src={data.image_file} alt="client" />
           <div className="stars">         
             {star.map((e,i) => <span  key={i} >&#9733;</span>)}
          
@@ -37,8 +37,8 @@ export default function Carrosel({ data }) {
           <h1>{data.name}</h1>
          
           <div className="carrossel-bottom-description">
-            <h2>{data.place}</h2>
-            <p>{data.description}</p>
+            <h2>{data.tour_name}</h2>
+            <p>{data.comment}</p>
           </div>
         </animated.div>
       ) : null}

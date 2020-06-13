@@ -68,7 +68,7 @@ function Destination() {
         setInputPlace('')
     }, [isSummer])
 
-
+/* 
     useEffect(() => {
         const filter_tourNames = places.filter(data => data.tour_name.toLowerCase().includes(inputPlace.toLowerCase()));
         const filter_activity = places.filter(data => data.activities.toString().includes(inputPlace.toLowerCase()));
@@ -76,9 +76,9 @@ function Destination() {
         const filter_places = filter_tourNames.concat(filter_activity.filter((item) => filter_tourNames.indexOf(item) < 0))
 
         setfiteredPlaces(filter_places) 
-    }, [inputPlace, lowPrice, highPrice])
+    }, [inputPlace, lowPrice, highPrice]) */
 
-<se
+
     return (
         <div className='destination-container'>
             <div className='destination-container__flexBox'>

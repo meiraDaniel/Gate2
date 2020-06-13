@@ -88,7 +88,7 @@ opacity: 0;
     display:flex;
    margin:1%;
    align-items: center;
-   box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.52);
+   box-shadow: -6px 6px 30px rgba(0, 0, 0, 0.52);
    color:white;
    cursor:pointer;
   
@@ -96,16 +96,25 @@ opacity: 0;
 }
 .navegation--center-links-summer{
     @extend  %navegation--center-links;
-    background:rgb(36, 75, 82);
+    background:transparent;
+    
 }
+.navegation--center-links-winter:hover{
+        box-shadow: inset -10px 10px 200px #102427;
+        transition:ease;
+    
+    }
 .navegation--center-links-winter{
     @extend  %navegation--center-links;
-    background:rgb(23, 63, 112);
+    background:transparent;
+   
 }
-%navegation--center-links:hover{
-    box-shadow: inset -1px 1px 100px rgba(255, 255, 255, 0.568);
+.navegation--center-links-winter:hover{
+    box-shadow: inset -10px 10px 200px #102427;
+    transition:ease;
 
 }
+
 #logo{
     cursor:pointer;
 }

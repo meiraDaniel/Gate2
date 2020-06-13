@@ -1,6 +1,6 @@
 
 
-import React, { useContext,useState } from "react";
+import React, { useContext,useState,useEffect } from "react";
 import { MyContext } from "../../Context/Context";
 import "./Place.scss";
 import { Chart } from "react-google-charts";
@@ -9,15 +9,17 @@ import "dotenv"
 export default function Place() {
   const { isSummer,tours } = useContext(MyContext);
   const[selected,setSelected]=useState([])
-  const Cities=[
-    ['City'],
-    ['Auckland'],
-    ['Wellington'],
-    ['Gisborne'],
-     ["Nelson"],
-   
-  ]
+const[city, setCity] =useState([])
 
+  useEffect(()=>{
+    handlePlaces()
+  },[tours])
+
+  const handlePlaces=()=>{
+    const cities = [["City"],]
+    tours.tours.forEach(e=>  cities.push([`${e.place.split(',')[0]}`]))
+    setCity(cities)
+  }
   
 
   const chartEvents = [
@@ -25,14 +27,12 @@ export default function Place() {
       eventName: "select",
       async callback ({ chartWrapper }) {
         const selectedId = chartWrapper.getChart().getSelection();
-         const data = await  Cities[selectedId[0].row + 1]
+         const data = await  city[selectedId[0].row + 1]
         setSelected(data);
-        console.log(data)
       
     }
     }
   ];
-
 
   return (
     <div className={isSummer ? "place--main-summer" : "place--main-winter"}>
@@ -41,7 +41,7 @@ export default function Place() {
         width={window.innerWidth*10}
         height={"100vh"}
         chartType="GeoChart"
-        data={Cities}
+        data={city}
         enableRegionInteractivity={true}
         chartEvents={chartEvents}
         options={{
@@ -61,7 +61,7 @@ export default function Place() {
       </div>
       <div className="place--description-right">
       <h1>{selected[0]}</h1>
-      <p>{tours.tours.filter(e=> e.place.split(',')[0].includes(selected[0]))}</p>
+      <p>{selected[0]?tours.tours.filter(e=> e.place.split(',')[0].includes(selected[0]))[0].description:null}</p>
       </div>
     </div>
   );
