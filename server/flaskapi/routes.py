@@ -6,7 +6,7 @@ from flaskapi.models import Tour, Client
 methods = ['GET', 'POST']
 
 @app.route('/places', methods=['GET'])
-def home():
+def get_places():
 
     list_tours = []
 
@@ -28,10 +28,43 @@ def home():
         list_tours.append(tour.as_dict())
     
     response = jsonify({'tours': list_tours})
-
-    print(response)
     return response
 
+@app.route('/clients', methods=['GET'])
+def get_clients():
+
+    list_clients = []
+
+    isSummer = request.args.get('isSummer')
+
+    response = jsonify({})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    if isSummer=='true':
+        query_clients = Client.query.join(Client.tour, aliased=True).filter_by(isSummer=True)
+    elif isSummer=='false':
+        query_clients = Client.query.join(Client.tour, aliased=True).filter_by(isSummer=False)
+    else:
+        response = jsonify({'error': 'Deu BO!!'})
+        return response
+
+    
+    for client in query_clients:
+
+        tour_name = client.tour.tour_name
+        tour_place = client.tour.place
+
+        client = client.as_dict()
+        
+        client['tour_name'] = tour_name
+        client['tour_place'] = tour_place
+
+        del client['tour_id']
+
+        list_clients.append(client)
+    
+    response = jsonify({'clients': list_clients})
+    return response
 
 
 

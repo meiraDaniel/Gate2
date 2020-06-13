@@ -43,7 +43,8 @@ function App() {
         <Home/>
        </Route>
        <Route path='/destinations'>
-         <Destinations />         
+          <Navegation/>
+          <Destinations />         
        </Route>
        <Route path="/about">
        <Navegation/>

@@ -6,7 +6,16 @@ import { MyContext } from "../../Context/Context";
 
 export default function Card({destination,i}){
 
-    const { isSummer} = useContext(MyContext);
+    const { isSummer,setDestinations,destinations} = useContext(MyContext);
+
+    const handleOnClick=()=>{
+      setDestinations({
+        type: "SELECTED_DESTINATIONS",
+        destinations: destination
+    
+      })
+    }
+    console.log(destinations)
 
     return(
     
@@ -24,7 +33,7 @@ export default function Card({destination,i}){
     <h3>{destination.price}$</h3>
     </div>
     </div>
-    <button className={isSummer?"button--small-summer":"button--small-winter"}>BUY NOW</button>
+    <button onClick={handleOnClick} className={isSummer?"button--small-summer":"button--small-winter"}>BUY NOW</button>
   </div>
   )
 }

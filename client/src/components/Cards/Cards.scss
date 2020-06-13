@@ -3,7 +3,8 @@
 
 .place-card{
     width: 45rem;
-    height: 18rem;
+    min-height: 18rem;
+    max-height: 100vh;
     display: flex;
     margin-bottom: 3rem;
     padding-right: 0.05rem;
@@ -12,8 +13,10 @@
 }
 
 .place-card__img{
-    min-width: 15rem;
+    min-width: 18rem;
     max-width: 18rem;
+    min-height: 18rem;
+    max-height: 18rem;
     padding: 0.1rem;
 }
 
@@ -25,7 +28,8 @@
 
 .place-card__content{    
     position: relative;
-    flex: 1 4;    
+    width: 100%;
+    // flex: 1 3;    
 }
 
 .place-card__title {
@@ -38,6 +42,8 @@
 }
 
 .place-card__content button {
+    @extend%button--big;
+    text-transform: uppercase;
     width: 6rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -61,22 +67,30 @@
 }
 
 .place-card__text{
+    margin: 0 auto;
     margin-top: 1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
     text-align: justify;
     line-height: 2rem;
+    width: 20rem;
+    padding-left: 0;
+    text-transform: capitalize;
 }
 
 .place-card__botom {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    margin-top: 3rem;
+    margin: 0 auto;
+    margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: $highlightsSummer;
     font-size: 1.3rem;
+    position:absolute;
+    bottom:0;
+    transform: translate(1rem, -1.5rem);
+    width: 80%;
+
 
 }
 
