@@ -5,42 +5,53 @@ import 'rc-slider/assets/index.css'
 
 import './Form.scss'
 
+import SliderForm from './SliderForm'
+
 import loupeIcon from '../../icons/loupe.svg'
 
-function SearchForm(props) {
-    const [travel, setTravel] = useState(false)
+function SearchForm({inputValue, handleChangeInput, rangeMin, rangeMax, handleChangePrice, highPrice, lowPrice, isLoading}) {
+    const [travel] = useState(false)
 
-    function handleToggleTravel() {
+/*     function handleToggleTravel() {
         setTravel(!travel);
     }
+   
+    const handleChangePrice = (values) => {
+        // console.log(values);
+        handleChangeValues(values);
+    }
 
-    function log(value) {
-        console.log(value);
-      }
-
+    useEffect(() => {}, [isLoading])
+     */
+    
+   
     return (
         <div className='search-form'>
             <h1 className='search-form__title'>Search</h1>
             <div className='search-form__inputs'>
                 <div className='search-form__searchInput'>
-                    <input value={props.value} onChange={props.handleChangeInput}/>
-                    <img src={loupeIcon} alt=""/>
+                    <input value={inputValue} onChange={handleChangeInput}/>
+                <img src={loupeIcon} alt=""/>
                 </div>
                 <div className='search-form__dateTravel'>
-                    <button onClick={handleToggleTravel}><span>When to travel</span></button>
-                    <ul className={travel ? 'search-form__dateTravel__activated' : 'search-form__dateTravel__notActivated'}>
+{/*                     <button onClick={handleToggleTravel}><span>When to travel</span></button>
+ */}                    <ul className={travel ? 'search-form__dateTravel__activated' : 'search-form__dateTravel__notActivated'}>
                         <li><button><span>Teste</span></button></li>
                     </ul>
                 </div>
-                <div className='search-form__price'>
-                    <div className='search-form__priceLabel'>
-                        <span>$50</span>
-                        <span>$150</span>
+                {isLoading&&<SliderForm lowPrice={lowPrice}
+                                        highPrice={highPrice}
+                                        rangeMin={rangeMin}
+                                        rangeMax={rangeMax}
+                                        handleChange={handleChangePrice}/>}
+                <div className='search-form__containerSlider'>
+                    <div className='search-form__labelsSlider'>
+                        <span>${lowPrice}</span>
+                        <span>${highPrice}</span>
                     </div>
-                    <div className='search-form__priceSlider'>
-                        <Range min={-10} step={10} onChange={log} defaultValue={[20, 40]} allowCross={false} pushable/>
-                    </div>
-                                        
+                    {isLoading?<div className='search-form__slider'>
+                        <Range min={rangeMin} max={rangeMax} defaultValue={[lowPrice, highPrice]} onAfterChange={(values) => handleChangePrice(values)} allowCross={false} pushable/>
+                    </div>:<></>}       
                 </div>
             </div>
         </div>

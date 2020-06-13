@@ -40,7 +40,7 @@ function LandingPage({ togleSummer }) {
               else togleSummer(false);
             }}
           >
-            Summer
+            Beach
           </button>
       
       </animated.div>

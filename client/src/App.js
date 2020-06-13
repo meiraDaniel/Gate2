@@ -1,4 +1,4 @@
-import React,{useContext,useEffect,useState} from 'react';
+import React,{useContext,useEffect,useCallback} from 'react';
 import './App.scss';
 import axios from 'axios'
 import { Switch,Route,useHistory} from "react-router-dom";
@@ -13,7 +13,7 @@ import About from './pages/About/About'
 import Contact from './pages/Contact/Contact'
 
 function App() {
- const {isSummer, setIsSummer,setTours,tours}= useContext(MyContext)
+ const {isSummer, setIsSummer,setTours}= useContext(MyContext)
  const history=useHistory()
 
 /**
@@ -26,10 +26,13 @@ function App() {
   history.push("/home")
 
  }
+ const handlerData = useCallback(()=>{
+  axios.get('/places', {params: {isSummer}}).then(res=>   setTours({type:'GET_DATA',tours:res.data.tours}))
+ },[isSummer,setTours])
 
  useEffect(() => {
-  axios.get('/places', {params: {isSummer}}).then(res=>   setTours({type:'GET_DATA',tours:res.data.tours}))
-}, [isSummer])
+  handlerData()
+}, [handlerData])
 
   return (
     <div className="App--main">
@@ -43,7 +46,8 @@ function App() {
         <Home/>
        </Route>
        <Route path='/destinations'>
-         <Destinations />         
+          <Navegation/>
+          <Destinations />         
        </Route>
        <Route path="/about">
        <Navegation/>

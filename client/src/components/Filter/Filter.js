@@ -4,7 +4,7 @@ import "./Filter.scss";
 
 function Filter() {
 
-  const { isSummer, setDestinations,tours,destinations} = useContext(MyContext);
+  const { isSummer, setDestinations,tours} = useContext(MyContext);
 
   const [place, setPlace] = useState();
   const [activities, setActivities] = useState();

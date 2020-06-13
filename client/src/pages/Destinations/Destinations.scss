@@ -1,13 +1,25 @@
 @import "../../global.scss";
 
 
+.destination-container{
+    width: 100%;
+    min-height: 100vh;
+    background: $summerWhite; 
+
+}
 
 
 .destination-container__flexBox{
     display: flex;
     justify-content: space-between;
-    margin: 5rem 10rem;
+    width: 80%;
+    margin: auto;
+    padding-top: 15rem;
 
+}
+
+.destination-container__flexBox h1{
+    font-size: 2rem;
 }
 
 .destination-container_highlights{
@@ -37,5 +49,9 @@
 .highlights span{
     text-align: center;
     padding: 0;  
+}
+
+.destination-container__flexBox_right{
+    min-width: 45rem;
 }
 
