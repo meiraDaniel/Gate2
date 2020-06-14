@@ -29,8 +29,8 @@ export default function Carrosel({ data }) {
     <div className="carrossel--main">
       {data ? transition.map(({item,props,key}) =>
         <animated.div key={key} style={props}>
-          <img src={data.image_file} alt="client" />
-          <div className="stars">         
+{/*           <img src={data.image_file} alt="client" />
+ */}          <div className="stars">         
             {star.map((e,i) => <span  key={i} >&#9733;</span>)}
          
        </div>

@@ -11,6 +11,7 @@ import Destinations from './pages/Destinations/Destinations'
 import {MyContext} from './Context/Context'
 import About from './pages/About/About'
 import Contact from './pages/Contact/Contact'
+import Checkout from './pages/Checkout/Checkout'
 
 function App() {
  const {isSummer, setIsSummer,setTours}= useContext(MyContext)
@@ -57,7 +58,11 @@ function App() {
        <Navegation/>
       <Contact/>
        </Route>
-     
+       <Route path="/checkout">
+       <Navegation/>
+      <Checkout/>
+       </Route>
+       
      </Switch>
     </div>
   );

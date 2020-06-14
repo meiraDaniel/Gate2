@@ -10,7 +10,7 @@ export default function Place() {
   const { isSummer,tours } = useContext(MyContext);
   const[selected,setSelected]=useState([])
 const[city, setCity] =useState([])
-
+const[description,setDescription]=useState("")
   useEffect(()=>{
     handlePlaces()
   },[tours])
@@ -28,14 +28,15 @@ const[city, setCity] =useState([])
       async callback ({ chartWrapper }) {
         const selectedId = chartWrapper.getChart().getSelection();
          const data = await  city[selectedId[0].row + 1]
-        setSelected(data);
-      
+       await setSelected(data);
+        setDescription(tours.tours.filter(e=> e.place.split(',')[0].includes(data))[0].description)
+
     }
     }
   ];
 
   return (
-    <div className={isSummer ? "place--main-summer" : "place--main-winter"}>
+    <div onMouseLeave={()=>{setDescription("");setSelected("")}}className={isSummer ? "place--main-summer" : "place--main-winter"}>
   <div className="map">
       <Chart
         width={window.innerWidth*10}
@@ -61,7 +62,7 @@ const[city, setCity] =useState([])
       </div>
       <div className="place--description-right">
       <h1>{selected[0]}</h1>
-      <p>{selected[0]?tours.tours.filter(e=> e.place.split(',')[0].includes(selected[0]))[0].description:null}</p>
+      <p>{description}</p>
       </div>
     </div>
   );

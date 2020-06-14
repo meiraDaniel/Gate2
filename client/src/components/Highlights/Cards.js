@@ -3,18 +3,20 @@ import "./Cards.scss"
 import beach from '../../images/summer.jpg'
 import cabin from '../../images/cabinCold.jpg'
 import { MyContext } from "../../Context/Context";
+import {useHistory} from "react-router-dom";
 
 export default function Card({destination,i}){
 
-    const { isSummer,setDestinations} = useContext(MyContext);
-
+    const { isSummer,setTours_selected,tours_selected} = useContext(MyContext);
+     const history=useHistory()
     const handleOnClick=()=>{
-      setDestinations({
-        type: "SELECTED_DESTINATIONS",
-        destinations: destination
-    
+      setTours_selected({
+        type: "BUY",
+        selected: destination,
       })
+      history.push("/checkout")
     }
+
 
     return(
     

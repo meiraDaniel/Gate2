@@ -99,8 +99,8 @@ opacity: 0;
     background:transparent;
     
 }
-.navegation--center-links-winter:hover{
-        box-shadow: inset -10px 10px 200px #102427;
+.navegation--center-links-summer:hover{
+        box-shadow: inset -1px 1px 200px #12282c;
         transition:ease;
     
     }
@@ -110,7 +110,7 @@ opacity: 0;
    
 }
 .navegation--center-links-winter:hover{
-    box-shadow: inset -10px 10px 200px #102427;
+    box-shadow: inset -10px 10px 200px #103057;
     transition:ease;
 
 }
@@ -126,7 +126,7 @@ opacity: 0;
     img{
         width: 45%;
         height:100%;
-        margin-right: 3%;
+        margin-right: 6%;
        
     }
 
@@ -225,8 +225,8 @@ opacity: 0;
 }
 @media only screen and (min-width:1366px){
     %navegation {
-        font-size:3vh;
-       
+        font-size:5vh;
+    
     }  
     .navegation--rigth-link{
         width:35%;
@@ -249,7 +249,7 @@ opacity: 0;
     .navegation-left{
       
         img{
-            width: 25%;
+            width: 35%;
             height:100%;
             margin-right: 3%;
            
