@@ -10,9 +10,9 @@ import Footer from '../../components/Footer/Footer'
 import Place from '../../components/Place/Place'
 
 function Home (){
-  const { isSummer} = useContext(MyContext);
+  const { isSummer, destinations} = useContext(MyContext);
 
-
+  console.log(destinations)
   
     return(
         <div className={isSummer?"main--home-summer":"main--home-winter"}>

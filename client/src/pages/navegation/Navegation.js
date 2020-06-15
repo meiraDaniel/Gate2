@@ -55,6 +55,8 @@ function Navegation({ toogleSummer }) {
       destinations: selectedPlace
     });
 
+    history.push('./destinations');
+
   };
   /**
    * @function handleActivities
@@ -67,6 +69,7 @@ function Navegation({ toogleSummer }) {
       type: "SELECTED_DESTINATIONS",
       destinations:selectedActivity
     });
+    history.push('./destinations');
   };
 
   const { transform, opacity } = useSpring({

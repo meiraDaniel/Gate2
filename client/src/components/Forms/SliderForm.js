@@ -5,17 +5,18 @@ import 'rc-slider/assets/index.css'
 
 import './Form.scss'
 
-function SliderForm({rangeMin, rangeMax, lowPrice, highPrice, handleChange}) {
+function SliderForm({rangeMin, rangeMax, lowValue, highValue, handleChange, decorator}) {
+
     return (
         <div className='search-form__containerSlider'>
             <div className='search-form__labelsSlider'>
-                <span>${lowPrice}</span>
-                <span>${highPrice}</span>
+                <span className={decorator}>{lowValue}</span>
+                <span className={decorator}>{highValue}</span>
             </div>
             <div className='search-form__slider'>
                 <Range  min={rangeMin} 
                         max={rangeMax} 
-                        defaultValue={[lowPrice, highPrice]} 
+                        defaultValue={[lowValue, highValue]} 
                         onAfterChange={(values) => handleChange(values)} 
                         allowCross={false} 
                         pushable/>
