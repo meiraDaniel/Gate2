@@ -12,8 +12,9 @@ import Place from '../../components/Place/Place'
 function Home (){
   const { isSummer, destinations} = useContext(MyContext);
 
-  console.log(destinations)
-  
+    console.log(destinations);
+    
+
     return(
         <div className={isSummer?"main--home-summer":"main--home-winter"}>
           <Head/>

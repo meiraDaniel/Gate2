@@ -1,4 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
+
+import { useHistory } from "react-router-dom";
 import { MyContext } from "../../Context/Context";
 import "./Filter.scss";
 
@@ -10,6 +12,8 @@ function Filter() {
   const [activities, setActivities] = useState();
   const [allPlaces, setAllPlaces] = useState([]);
   const [allActivities, setAllActivities] = useState([]);
+
+  const history = useHistory();
 
   useEffect(() => {
     const places = [];
@@ -31,27 +35,36 @@ function Filter() {
    */
   const handleOnClick = () => {
 
+      console.log(`${activities}`)
+      
 
-      if (activities && place)
+    if (activities && place)
       setDestinations({
         type: "SELECTED_DESTINATIONS",
-        destinations: tours.tours.filter(
-          (e) => e.activities.includes(`${activities}`) && e.place.includes(`${place}, New Zealand`))
+        destinations: `${place}`
         
     
       });
+
     if (!activities && place)
       setDestinations({
         type: "SELECTED_DESTINATIONS",
-        destinations: tours.tours.filter(e=>e.place.includes(`${place}, New Zealand`))
+        destinations: `${place}`
       });
     if (activities && !place)
       setDestinations({
         type: "SELECTED_DESTINATIONS",
-        destinations: tours.tours.filter((e) => e.activities.includes(`${activities}`))
+        destinations: `${activities}`
       });
+
     if (!activities && !place)
-      setDestinations({ type: "SELECTED_DESTINATIONS", destinations: tours.tours })
+      setDestinations({
+        type: "SELECTED_DESTINATIONS",
+        destinations: ''
+      });
+
+    history.push('./destinations');
+    
 }
 
   return (

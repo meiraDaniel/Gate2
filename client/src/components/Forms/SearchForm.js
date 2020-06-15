@@ -94,8 +94,7 @@ function SearchForm({places, filter_places, handleFilter, isLoading}) {
     useEffect(() => {
         
         if (!isLoading){
-            console.log(destinations);
-            
+           
             setStartedValue(destinations.destinations);
 
             (destinations.destinations) &&
