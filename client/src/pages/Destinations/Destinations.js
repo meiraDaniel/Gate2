@@ -12,7 +12,7 @@ import './Destinations.scss'
 
 function Destination() {
 
-    const { isSummer, destinations, setDestinations } = useContext(MyContext);
+    const { isSummer } = useContext(MyContext);
 
     const [places, setPlaces] = useState([]);
     const [filteredPlaces, setFilteredPlaces] = useState([]);
