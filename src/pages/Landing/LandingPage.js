@@ -1,9 +1,10 @@
-import React, {  useState } from "react";
+import React, {  useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import beach from "../../images/ladingpageback.jpg";
 import cabin from "../../images/cabinCold.jpg";
 import "./LandingPage.scss";
 import useInterval from "react-useinterval";
+import axios from 'axios';
 
 const pages = [beach, cabin];
 
@@ -17,6 +18,17 @@ function LandingPage({ togleSummer }) {
   });
 
   useInterval(() => set(!flag), 4000);
+
+  useEffect(() => {
+        
+    const fetchPlaces = async () => {
+
+        const res = await axios.get('/places', {params: false});
+        console.log(res);
+      }
+
+    fetchPlaces();
+    }, [])
 
   return (
     <div className="landing--main" onClick={() => set(!flag)}>
