@@ -28,7 +28,7 @@ function App() {
 
  }
  const handlerData = useCallback(()=>{
-  axios.get('/places', {params: {isSummer}}).then(res=>   setTours({type:'GET_DATA',tours:res.data.tours}))
+  axios.get('https://lidas-server.herokuapp.com/places', {params: {isSummer}}).then(res=>   setTours({type:'GET_DATA',tours:res.data.tours}))
  },[isSummer,setTours])
 
  useEffect(() => {
