@@ -36,7 +36,7 @@ useInterval(nextSlide,5000)
     <div  className={isSummer?"clients--main-summer":"clients--main-winter"}>
      <div   className={isSummer?"clients--center-carrossel-summer":"clients--center-carrossel-winter"}>
      
-   {data[0]? <Carrosel  data={data[currentInd]}  />:null }
+   {data[currentInd]? <Carrosel  data={data[currentInd]}  />:null }
   </div>
     </div>
   );

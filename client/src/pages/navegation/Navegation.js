@@ -11,7 +11,7 @@ import { useSpring, animated } from "react-spring";
 
 function Navegation({ toogleSummer }) {
   const [link, setLink] = useState("");
-  const { isSummer, setDestinations, setIsSummer,tours } = useContext(MyContext);
+  const { isSummer, setDestinations, setIsSummer,tours,destinations } = useContext(MyContext);
 
   const [allPlaces, setAllPlaces] = useState([]);
   const [allActivities, setAllActivities] = useState([]);
@@ -49,10 +49,12 @@ function Navegation({ toogleSummer }) {
    */
 
   const handlePlace = (selectedPlace) => {
+  
     setDestinations({
       type: "SELECTED_DESTINATIONS",
-      destinations: tours.tours.filter((e) => e.place === selectedPlace),
+      destinations: selectedPlace
     });
+
   };
   /**
    * @function handleActivities
@@ -63,7 +65,7 @@ function Navegation({ toogleSummer }) {
   const handleActivities = (selectedActivity) => {
     setDestinations({
       type: "SELECTED_DESTINATIONS",
-      destinations: tours.tours.filter((e) => e.activities === selectedActivity),
+      destinations:selectedActivity
     });
   };
 

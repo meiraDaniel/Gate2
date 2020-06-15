@@ -1,0 +1,115 @@
+@import "../../global.scss";
+
+.checkout--main {
+  background: $letterWinter;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+}
+
+%checkout-division {
+  width: 90%;
+  display: flex;
+
+  padding-top: 5%;
+}
+.checktout--left-form {
+  @extend %checkout-division;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width:100%;
+  height: 90%;
+}
+.checkout-rigth-checkout {
+  @extend %checkout-division;
+  background: $backgroundWinter;
+  color: $nude;
+  height: 70%;
+  padding:2%;
+  width:100%;
+  align-items: center;
+
+}
+
+#yourBooking {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  position: relative;
+  width: 20%;
+  height: 100%;
+  justify-content: center;
+  margin: 5%;
+  
+}
+.checkout--containers{
+    display: flex;
+  flex-direction: column;
+    margin:2%;
+    border-bottom: 3px solid $highlightsSummer;
+    h3{
+        font-size:2vh;
+    }
+}
+.checkout--containers-display-flex{
+    margin:2%;
+    border-bottom: 3px solid $highlightsSummer;
+    display:flex;
+    
+    h3{
+        margin:5%;
+        font-size:2vh;
+    }
+    div{
+        flex-direction:column;
+    }
+}
+#checkout-price{
+    font-size:7vh;
+    color:rgb(6, 207, 22);
+    align-self:flex-end;
+}
+
+@media only screen and (orientation:landscape) {
+  %checkout-division {
+    width: 70%;
+    
+  }
+  .checkout-rigth-checkout {
+    margin-top:5%;
+  }
+}
+
+@media only screen and (orientation:landscape)and(max-width:1000px) {
+  %checkout-division {
+    width: 70%;
+    height:70%;
+  }
+  .checktout--left-form {
+    height:90%;
+  }
+  #yourBooking {
+  font-size:4vh;
+  }
+  .checkout--containers{
+    h2{font-size:2.5vh;}
+    h3{
+      font-size:1.5vh;
+  }
+  }
+  .checkout--containers-display-flex{
+    
+    h3{
+        margin:5%;
+        font-size:1.5vh;
+    }
+    h2{font-size:2.5vh;}
+   
+}
+}
