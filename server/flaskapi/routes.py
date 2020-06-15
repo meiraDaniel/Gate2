@@ -6,10 +6,6 @@ from flaskapi.models import Tour, Client
 methods = ['GET', 'POST']
 
 
-@app.route('/')
-def index():
-    return app.send_static_file('index.html')
-
 @app.route('/places', methods=['GET'])
 def get_places():
 
