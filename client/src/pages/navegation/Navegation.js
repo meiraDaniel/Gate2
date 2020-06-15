@@ -54,9 +54,8 @@ function Navegation({ toogleSummer }) {
       type: "SELECTED_DESTINATIONS",
       destinations: selectedPlace
     });
-
-    history.push('./destinations');
-
+    set(false);    
+    history.push('/destinations');
   };
   /**
    * @function handleActivities
@@ -69,7 +68,8 @@ function Navegation({ toogleSummer }) {
       type: "SELECTED_DESTINATIONS",
       destinations:selectedActivity
     });
-    history.push('./destinations');
+    set(false)
+    history.push('/destinations');
   };
 
   const { transform, opacity } = useSpring({
@@ -83,8 +83,8 @@ function Navegation({ toogleSummer }) {
   };
 
   return (
-    <main onMouseLeave={() => set(false)} className="navegation--main">
-      <nav className={isSummer?"nav-summer":"nav-winter"}>
+    <main onMouseLeave={() => set(false)}   className="navegation--main">
+      <nav  className={isSummer?"nav-summer":"nav-winter"}>
         <div className="navegation-left">
           <img
             src={logo}

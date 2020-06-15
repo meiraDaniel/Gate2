@@ -67,7 +67,8 @@ function Destination() {
                                                 activities={data.highlights_activities}
                                                 numberPeople={data.number_people}
                                                 price={data.price}
-                                                numberDays={data.number_days}/>
+                                                numberDays={data.number_days}
+                                                data={data}/>
                         })}
                     </div>
                 </div>
