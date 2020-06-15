@@ -27,6 +27,19 @@ export const userDestinations = (state, action) => {
   }
 } 
 
+export const handleBuy = (state, action) => {
+
+  switch (action.type) {
+    case "BUY":
+      return {
+        addedItems: action.selected,
+      };
+    default:
+      return state;
+  }
+} 
+
+
 export const getData = (state, action) => {
   switch (action.type) {
     case 'GET_DATA':

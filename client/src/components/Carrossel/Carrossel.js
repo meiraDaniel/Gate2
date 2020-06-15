@@ -1,6 +1,6 @@
 import React,{useState, useEffect,useCallback} from "react";
 import {useTransition,animated} from 'react-spring'
-
+import client from '../../images/Client.jpg'
 export default function Carrosel({ data }) {
   const[ star,set]=useState([])
 
@@ -29,8 +29,8 @@ export default function Carrosel({ data }) {
     <div className="carrossel--main">
       {data ? transition.map(({item,props,key}) =>
         <animated.div key={key} style={props}>
-          <img src={data.image_file} alt="client" />
-          <div className="stars">         
+          <img src={client} alt="client" />
+           <div className="stars">         
             {star.map((e,i) => <span  key={i} >&#9733;</span>)}
          
        </div>

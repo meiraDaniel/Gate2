@@ -11,7 +11,7 @@ import { useSpring, animated } from "react-spring";
 
 function Navegation({ toogleSummer }) {
   const [link, setLink] = useState("");
-  const { isSummer, setDestinations, setIsSummer,tours } = useContext(MyContext);
+  const { isSummer, setDestinations, setIsSummer,tours,destinations } = useContext(MyContext);
 
   const [allPlaces, setAllPlaces] = useState([]);
   const [allActivities, setAllActivities] = useState([]);
@@ -49,10 +49,13 @@ function Navegation({ toogleSummer }) {
    */
 
   const handlePlace = (selectedPlace) => {
+  
     setDestinations({
       type: "SELECTED_DESTINATIONS",
-      destinations: tours.tours.filter((e) => e.place === selectedPlace),
+      destinations: selectedPlace
     });
+    set(false);    
+    history.push('/destinations');
   };
   /**
    * @function handleActivities
@@ -63,8 +66,10 @@ function Navegation({ toogleSummer }) {
   const handleActivities = (selectedActivity) => {
     setDestinations({
       type: "SELECTED_DESTINATIONS",
-      destinations: tours.tours.filter((e) => e.activities === selectedActivity),
+      destinations:selectedActivity
     });
+    set(false)
+    history.push('/destinations');
   };
 
   const { transform, opacity } = useSpring({
@@ -78,8 +83,8 @@ function Navegation({ toogleSummer }) {
   };
 
   return (
-    <main onMouseLeave={() => set(false)} className="navegation--main">
-      <nav className={isSummer?"nav-summer":"nav-winter"}>
+    <main onMouseLeave={() => set(false)}   className="navegation--main">
+      <nav  className={isSummer?"nav-summer":"nav-winter"}>
         <div className="navegation-left">
           <img
             src={logo}
@@ -158,9 +163,9 @@ function Navegation({ toogleSummer }) {
           {link === "destination" ? (
             <div>
               {allPlaces.map((e, i) => (
-                <div className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
+                <div onClick={() => handlePlace(e)} key={i} className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
                   <img src={boat} alt="ship" />
-                  <h3 key={i} onClick={() => handlePlace(e)}>
+                  <h3 key={i} >
                     {e}
                   </h3>
                 </div>
@@ -169,9 +174,9 @@ function Navegation({ toogleSummer }) {
           ) : link === "activities" ? (
             <div>
               {allActivities.map((e, i) => (
-                <div className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
+                <div  onClick={() => handleActivities(e)}  key={i}  className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
                   <img src={isSummer?surf:ski} alt="ship" />
-                  <h3 key={i} onClick={() => handleActivities(e)}>
+                  <h3 key={i} >
                     {e}
                   </h3>
                 </div>

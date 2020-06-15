@@ -1,11 +1,20 @@
-import React, { useEffect } from 'react';
-
+import React, { useEffect,useContext } from 'react';
+import { MyContext } from "../../Context/Context";
 import summerImg from '../../images/summer.jpg'
 import './Cards.scss'
+import {useHistory} from "react-router-dom";
 
-function PlaceCards({title, activities, numberPeople, price, numberDays}) {
+function PlaceCards({title, activities, numberPeople, price, numberDays,data}) {
+    const { setTours_selected} = useContext(MyContext);
+const history =useHistory()
 
-
+    const handleOnClick=()=>{
+        setTours_selected({
+          type: "BUY",
+          selected: data,
+        })
+        history.push("/checkout")
+      }
 
     return (
         <div className='place-card'>
@@ -13,7 +22,7 @@ function PlaceCards({title, activities, numberPeople, price, numberDays}) {
                 <img src={summerImg} alt='' />
             </div>
             <div className='place-card__content'>
-                <button className='button--big'>buy me</button>
+                <button  onClick={handleOnClick} className='button--big'>buy me</button>
                 <h1 className='place-card__title'>{title}</h1>
                 <div className='place-card__line'></div>
                 <ul className='place-card__text'>

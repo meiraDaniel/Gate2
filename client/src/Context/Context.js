@@ -1,5 +1,5 @@
 import React, {createContext,useReducer,useEffect} from 'react'
-import {SeasonReducer,userDestinations,getData} from "../Reducer/reducer"
+import {SeasonReducer,userDestinations,getData,handleBuy} from "../Reducer/reducer"
 
 export const MyContext = createContext()
 
@@ -18,6 +18,14 @@ export const Provider  = props =>{
         return localData ? JSON.parse(localData) : [];   
     })
 
+    const [tours_selected,setTours_selected] =useReducer(handleBuy,{
+        cartList: [0],
+        },()=>{
+        const localData = localStorage.getItem('tours_selected');
+        return localData ? JSON.parse(localData) : [];   
+    })
+  
+
     useEffect(()=>{
         localStorage.setItem("isSummer", JSON.stringify(isSummer))
     },[isSummer])
@@ -28,10 +36,13 @@ export const Provider  = props =>{
     
     useEffect(()=>{
         localStorage.setItem("destinations", JSON.stringify(destinations))
-    },[tours])
+    },[destinations])
+    useEffect(()=>{
+        localStorage.setItem("tours_selected", JSON.stringify(tours_selected))
+    },[tours_selected])
     
 return(
-        <MyContext.Provider  value={{isSummer,setIsSummer,destinations,setDestinations,setTours,tours}}>
+        <MyContext.Provider  value={{isSummer,setIsSummer,destinations,setDestinations,setTours,tours,setTours_selected,tours_selected}}>
             {props.children}
         </MyContext.Provider>
 

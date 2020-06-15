@@ -12,7 +12,8 @@
     font-family: $headline;
     color: $summerWhite;
     text-transform: uppercase;
-    margin-top: 0;  
+    margin-top: 0;
+    font-size: 2rem;
 }
 
 .search-form__searchInput{
@@ -69,57 +70,6 @@
     
 }
 
-.search-form__dateTravel button span{
-   padding-left: 3rem; 
-   display: block;
-}
-
-.search-form__dateTravel button:hover{
-    cursor: pointer;
-}
-
-.search-form__dateTravel ul{
-    width: 100%;
-    position: absolute;
-    left: 0; 
-    top: 100%;
-    margin: 0;
-    padding-left: 0;
-    background-color: white;
-    box-sizing: border-box;
-    z-index: 1;
-}
-
-.search-form__dateTravel ul li{
-    list-style: none;
-}
-
-.search-form__dateTravel ul li button{
-    width: 100%;
-    margin: 0;
-    height: 3rem;
-    border-radius: 0;
-    box-sizing: border-box;
-}
-.search-form__dateTravel ul li button span{
-    text-align: center;
-    padding: 0;
-}
-
-.search-form__dateTravel button span {
-    text-align: center;
-    padding: 0;  
-}
-
-.search-form__dateTravel ul li button:hover{
-    cursor: pointer;
-    background-color: #aaa;
-}
-
-.search-form__dateTravel__notActivated{
-    display: none;
-}
-
 .search-form__containerSlider {
     width: 100%;
     height: 3rem;
@@ -134,7 +84,7 @@
 }
 
 .search-form__labelsSlider{
-    width: 80%;
+    width: 90%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -150,3 +100,25 @@
     margin: auto;
 }
 
+.price_decorator:before{
+    content: "$";
+}
+
+.day_decorator:before{
+    content: "Day: ";
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+
+    .search-form{
+        width: 15rem;
+        padding: 4rem 1rem 2rem 1rem; 
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 780px) {
+    .search-form{
+        width: 60%;
+        margin: 0 auto;
+    }
+}

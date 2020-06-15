@@ -18,6 +18,8 @@
     min-height: 18rem;
     max-height: 18rem;
     padding: 0.1rem;
+    position: relative;
+    
 }
 
 .place-card__img img{
@@ -38,6 +40,7 @@
     padding-top: 1rem;
     padding-left: 0.8rem;
     margin-bottom: 0;
+    font-size: 2rem;
     
 }
 
@@ -114,4 +117,48 @@
 }
 .place-card__botom p:not(:first-child){
     border-left: solid 0.15rem rgba($backgroundSummer,0.8);
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+
+    .place-card{
+        width: 40rem;
+        margin-right: 0;
+    }
+    
+    .place-card__img{
+        min-width: 12rem;
+        max-width: 12rem;
+        min-height: 12rem;
+        max-height: 12rem;
+        transform: translateY(2.5rem);
+        position: relative;
+    }
+
+    .place-card__title{
+        font-size: 1.5rem;
+    }
+
+    .place-card__text{
+        width: 10rem;
+        margin-left: 2rem;
+    }
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 960px) {
+    .place-card{
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 400px) and (max-width: 780px) {
+    .place-card{
+        margin-top: 3rem;
+    }
+    .place-card{
+        width: 100%;
+    }
 }

@@ -84,7 +84,7 @@ margin-bottom:5%;
     }
 }
 
-@media only screen and (min-width:700px) and ( max-width:1300px){
+@media only screen and (min-width:700px) and ( max-width:1300px) and (orientation:portrait){
     .main-container-center{
         width:100%;
     height:70%;
@@ -103,7 +103,9 @@ margin-bottom:5%;
         margin:0 3% 0 3%;
         }
 }
-@media only screen and (min-width:1300px){
+
+
+@media only screen and (orientation:landscape){
     .main-container-center{
         width:100%;
     height:70%;

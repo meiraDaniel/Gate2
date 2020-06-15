@@ -27,7 +27,7 @@ justify-content: center;
 cursor:pointer;
 }
 .place--description-right{
-    width:50%;
+    width:40%;
     height:100%;
        color:white;
     display:flex;
@@ -36,7 +36,7 @@ cursor:pointer;
 flex-direction:column;
 
 p{
-    font-size:2vh;
+    font-size:3vh;
 
 }
 h1{
@@ -49,5 +49,20 @@ h1{
 @media only screen and (max-width:800px){
     %place--main{
 display:none;
+    }
+}
+
+@media only screen and (max-width:1025px){
+    .place--description-right{
+     
+    
+    p{
+        font-size:2vh;
+    
+    }
+    h1{
+        font-size:5vh;
+    }
+    
     }
 }
