@@ -7,7 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
 }
 
 %checkout-division {
@@ -21,15 +23,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width:100%;
   height: 90%;
 }
 .checkout-rigth-checkout {
   @extend %checkout-division;
   background: $backgroundWinter;
   color: $nude;
-  height: 100%;
+  height: 70%;
   padding:2%;
-
+  width:100%;
   align-items: center;
 
 }
@@ -73,8 +76,40 @@
     align-self:flex-end;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (orientation:landscape) {
   %checkout-division {
     width: 70%;
+    
   }
+  .checkout-rigth-checkout {
+    margin-top:5%;
+  }
+}
+
+@media only screen and (orientation:landscape)and(max-width:1000px) {
+  %checkout-division {
+    width: 70%;
+    height:70%;
+  }
+  .checktout--left-form {
+    height:90%;
+  }
+  #yourBooking {
+  font-size:4vh;
+  }
+  .checkout--containers{
+    h2{font-size:2.5vh;}
+    h3{
+      font-size:1.5vh;
+  }
+  }
+  .checkout--containers-display-flex{
+    
+    h3{
+        margin:5%;
+        font-size:1.5vh;
+    }
+    h2{font-size:2.5vh;}
+   
+}
 }

@@ -1,263 +1,248 @@
 @import "../../global.scss";
 
-.navegation--main{
-    position:absolute;
-        background:rgba(0, 0, 0, 0.561);
-        width:100%;
-        height:8%;
+.navegation--main {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.561);
+  width: 100%;
+  height: 8%;
+  z-index: 9;
 }
-nav{
-    display:flex;
-    width:100%;
-    height:100%;
-    align-items: center;
-    justify-content:space-between;
-    border-bottom: 2px solid $letterWinter;
-    img{
-        width:15%;
-        height:100%;
-   
-}}
-.navegation--rigth-link{
-    display:flex;
-    width:75%;
-    height:100%;
-    align-items:center;
-    cursor:pointer;
+nav {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid $letterWinter;
+  img {
+    width: 15%;
+    height: 100%;
+  }
+}
+.navegation--rigth-link {
+  display: flex;
+  width: 75%;
+  height: 100%;
+  align-items: center;
+  cursor: pointer;
 }
 
 %navegation {
-    font-family:$headline;
-    font-size:1.5vh;
-    margin:1%;
-    text-decoration:none;
+  font-family: $headline;
+  font-size: 1.5vh;
+  margin: 1%;
+  text-decoration: none;
 }
-%navegation:hover{
-    text-decoration: underline;
+%navegation:hover {
+  text-decoration: underline;
 }
-.navegation--links-summer{
-   @extend %navegation ;
-    color:$nude; 
-  
+.navegation--links-summer {
+  @extend %navegation;
+  color: $nude;
 }
-.navegation--links-winter{
-    @extend %navegation;
-    color:white; 
-
+.navegation--links-winter {
+  @extend %navegation;
+  color: white;
 }
-%navegation--center-overlay{
-    width:100%;
-    height:100vh;
-    position:absolute;
-    z-index:9;
-    background:rgba(36, 75, 82, 0.959);
-    display:flex;
-    justify-content: center;
-    transition: 0.6s ease-in-out;
+%navegation--center-overlay {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 9;
+  background: rgba(36, 75, 82, 0.959);
+  display: flex;
+  justify-content: center;
+  transition: 0.6s ease-in-out;
 }
-.close{
-    @extend  %navegation--center-overlay;
-opacity: 0;
-    height:0vh;  
+.close {
+  @extend %navegation--center-overlay;
+  opacity: 0;
+  height: 0vh;
 }
-.navegation--center-overlay-summer{
-   @extend  %navegation--center-overlay;
-    background:rgba(0, 0, 0, 0.603);
-    
+.navegation--center-overlay-summer {
+  @extend %navegation--center-overlay;
+  background: rgba(0, 0, 0, 0.603);
 }
-.navegation--center-overlay-winter{
-    @extend  %navegation--center-overlay;
-    background:rgba(0, 0, 0, 0.603);
+.navegation--center-overlay-winter {
+  @extend %navegation--center-overlay;
+  background: rgba(0, 0, 0, 0.603);
 }
-.navegation--center-opendiv-summer{
-    width:80%;
-    height:70%;
-    display:flex;
-    margin-top:10%;
+.navegation--center-opendiv-summer {
+  width: 80%;
+  height: 70%;
+  display: flex;
+  margin-top: 10%;
 }
 
-.navegation--center-opendiv-summer>div{
-    width:100%;
-    height:100%;
-    display:flex;
-    flex-wrap:wrap;
+.navegation--center-opendiv-summer > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
-%navegation--center-links{
-    width:45%;
-    height:20%;
-    display:flex;
-   margin:1%;
-   align-items: center;
-   box-shadow: -6px 6px 30px rgba(0, 0, 0, 0.52);
-   color:white;
-   cursor:pointer;
-  
-   
+%navegation--center-links {
+  width: 45%;
+  height: 20%;
+  display: flex;
+  margin: 1%;
+  align-items: center;
+  box-shadow: -6px 6px 30px rgba(0, 0, 0, 0.52);
+  color: white;
+  cursor: pointer;
 }
-.navegation--center-links-summer{
-    @extend  %navegation--center-links;
-    background:transparent;
-    
+.navegation--center-links-summer {
+  @extend %navegation--center-links;
+  background: transparent;
 }
-.navegation--center-links-summer:hover{
-        box-shadow: inset -1px 1px 200px #12282c;
-        transition:ease;
-    
-    }
-.navegation--center-links-winter{
-    @extend  %navegation--center-links;
-    background:transparent;
-   
+.navegation--center-links-summer:hover {
+  box-shadow: inset -1px 1px 200px #12282c;
+  transition: ease;
 }
-.navegation--center-links-winter:hover{
-    box-shadow: inset -10px 10px 200px #103057;
-    transition:ease;
-
+.navegation--center-links-winter {
+  @extend %navegation--center-links;
+  background: transparent;
+}
+.navegation--center-links-winter:hover {
+  box-shadow: inset -10px 10px 200px #103057;
+  transition: ease;
 }
 
-#logo{
-    cursor:pointer;
+#logo {
+  cursor: pointer;
 }
-.navegation-left{
-    display:flex;
-    align-items:center;
-    width:30%;
-    height:100%;
-    img{
-        width: 45%;
-        height:100%;
-        margin-right: 6%;
-       
-    }
-
+.navegation-left {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  img {
+    width: 45%;
+    height: 100%;
+    margin-right: 6%;
+  }
 }
-.season{
-    display:flex;
-    align-items:center;
-    h2{font-size:1.5vh;}
+.season {
+  display: flex;
+  align-items: center;
+  h2 {
+    font-size: 1.5vh;
+  }
 }
-.navegation-summer{
-    color:$letterWinter;
-    cursor:pointer;
-} 
-.navegation-winter{
-    color:$nude;
-        cursor:pointer;
-
-
+.navegation-summer {
+  color: $letterWinter;
+  cursor: pointer;
+}
+.navegation-winter {
+  color: $nude;
+  cursor: pointer;
 }
 
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  %navegation {
+    font-size: 2vh;
+  }
+  .navegation--rigth-link {
+    width: 65%;
+  }
 
-@media only screen and ( min-width:600px) and (max-width:900px){
-    %navegation {
-        font-size:2vh;
-       
-    }  
-    .navegation--rigth-link{
-        width:65%;
-       
+  .navegation--main {
+    height: 12%;
+    img {
+      width: 18%;
+      height: 100%;
     }
-  
-    .navegation--main{
-       
-            height:12%;
-            img{
-                width:18%;
-                height:100%;
-           
-        }
+  }
+  .navegation-left {
+    img {
+      width: 45%;
     }
-    .navegation-left{
-        
-        img{
-            width: 45%;}
-            h2{font-size:2.5vh;}
-}}
-
-
-
-@media only screen and ( min-width:901px) and (max-width:1366px){
-    %navegation {
-        font-size:2vh;
-       
-    }  
-    .navegation--rigth-link{
-        width:65%;
-        height:100%;
-       
+    h2 {
+      font-size: 2.5vh;
     }
-   
-    .navegation--main{
-       
-            height:12%;
-    }
-    %navegation--center-links{
-        width:25%;
-        height:30%;
-        
-        img{
-            width:8%;
-            height:100%;
-       
-    }
-    }
+  }
 }
-@media only screen and ( orientation:landscape) and( max-height:500px){
-    %navegation {
-        font-size:3vh;
-       
-    }  
-    .navegation--rigth-link{
-        width:45%;
-        
 
+@media only screen and (min-width: 901px) and (max-width: 1366px) {
+  %navegation {
+    font-size: 2vh;
+  }
+  .navegation--rigth-link {
+    width: 75%;
+    height: 100%;
+  }
+
+  .navegation--main {
+    height: 12%;
+  }
+  %navegation--center-links {
+    width: 25%;
+    height: 30%;
+
+    img {
+      width: 8%;
+      height: 100%;
     }
-    %navegation--center-links{
-        img{
-            width:10%;
-            height:100%;
-       
-    }}
-    .navegation--main{
-       
-            height:12%;
-    }
+  }
 }
-@media only screen and (min-width:1366px){
-    %navegation {
-        font-size:5vh;
-    
-    }  
-    .navegation--rigth-link{
-        width:35%;
-        height:100%;
-       
+@media only screen and (orientation: landscape) and(max-width:1166px) {
+  %navegation {
+    font-size: 3vh;
+  }
+  .navegation--rigth-link {
+    width: 50%;
+  }
+  nav {
+    justify-content: flex-start;
+  }
+
+  %navegation--center-links {
+
+    img {
+      width: 10%;
+      height: 100%;
     }
-    %navegation--center-links{
-        width:25%;
-        height:30%;
-        
-        img{
-            width:30%;
-            height:100%;
+  }
+  .navegation--main {
+    height: 12%;
+  }
+  .navegation-left {
+    width: 50%;
+    img {
+        width: 15%;
        
-    }}
-    .navegation--main{
-       
-            height:12%;
+      }
+  }
+}
+@media only screen and (min-width: 1166px) {
+  %navegation {
+    font-size: 3vh;
+  }
+  .navegation--rigth-link {
+    width: 50%;
+    height: 100%;
+  }
+  %navegation--center-links {
+    width: 25%;
+    height: 30%;
+
+    img {
+      width: 20%;
+      height: 100%;
     }
-    .navegation-left{
-      
-        img{
-            width: 35%;
-            height:100%;
-            margin-right: 3%;
-           
-        }
-    
+  }
+  .navegation--main {
+    height: 12%;
+  }
+  .navegation-left {
+    img {
+      width: 25%;
+      height: 100%;
+      margin-right: 3%;
     }
-    .season{
-       
-        h2{font-size:3vh;}
+  }
+  .season {
+    h2 {
+      font-size: 3vh;
     }
+  }
 }

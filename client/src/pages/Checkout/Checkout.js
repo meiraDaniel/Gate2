@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./Checkout.scss";
 import FormCheckout from "../../components/Form/FormCheckout";
-import CheckoutBooking from "../../components/CheckoutBooking/CheckoutBooking";
 import { useSpring, animated } from "react-spring";
 import { MyContext } from "../../Context/Context";
 
@@ -12,13 +11,12 @@ export default function Checkout() {
   const props = useSpring({
     to: {
       position: window.innerWidth < 1000 ? "absolute" : "relative",
-      width: flag ? (window.innerWidth < 1000 ? "100%" : "80%") : "15%",
+      width: flag ? (window.innerWidth < 1000 ? "100%" : "80%") : "8%",
       transition: "ease",
-      left: flag ? "0%" : window.innerWidth < 1000 ? "90%" : "18%",
+      left: flag ? "0%" : window.innerWidth < 1000 ? "90%" : "13%",
     },
   });
 
-  console.log(flag);
   return (
     <div className="checkout--main">
       <div className="checktout--left-form">

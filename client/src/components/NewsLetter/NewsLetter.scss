@@ -113,7 +113,7 @@ background:$backgroundSummer;
   
 }
 
-@media only screen and (min-width:1000px){
+@media only screen and  (orientation:landscape){
     %newsletter--center--box{
         width:50%;
         height:70%;
@@ -129,7 +129,7 @@ h1{
 
 }
 %submit{
-    width:50%;
+    width:40%;
     height:45%; 
 }
 }
