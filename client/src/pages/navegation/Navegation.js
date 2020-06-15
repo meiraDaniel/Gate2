@@ -163,9 +163,9 @@ function Navegation({ toogleSummer }) {
           {link === "destination" ? (
             <div>
               {allPlaces.map((e, i) => (
-                <div className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
+                <div onClick={() => handlePlace(e)} key={i} className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
                   <img src={boat} alt="ship" />
-                  <h3 key={i} onClick={() => handlePlace(e)}>
+                  <h3 key={i} >
                     {e}
                   </h3>
                 </div>
@@ -174,9 +174,9 @@ function Navegation({ toogleSummer }) {
           ) : link === "activities" ? (
             <div>
               {allActivities.map((e, i) => (
-                <div className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
+                <div  onClick={() => handleActivities(e)}  key={i}  className={isSummer?"navegation--center-links-summer":"navegation--center-links-winter"}>
                   <img src={isSummer?surf:ski} alt="ship" />
-                  <h3 key={i} onClick={() => handleActivities(e)}>
+                  <h3 key={i} >
                     {e}
                   </h3>
                 </div>
