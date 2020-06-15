@@ -23,7 +23,7 @@ function LandingPage({ togleSummer }) {
         
     const fetchPlaces = async () => {
 
-        const res = await axios.get('/places', {params: false});
+        const res = await axios.get('https://lidas-server.herokuapp.com/places', {params: false});
         console.log(res);
       }
 
