@@ -27,7 +27,7 @@ function Destination() {
 
             setIsLoading(true);
 
-            const res = await axios.get('/places', {params: {isSummer}});
+            const res = await axios.get('https://lidas-server.herokuapp.com/places', {params: {isSummer}});
 
             const places_tours = res.data.tours;
 

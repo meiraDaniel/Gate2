@@ -7,22 +7,22 @@ export const MyContext = createContext()
 export const Provider  = props =>{
     const[isSummer,setIsSummer] =useReducer(SeasonReducer,[] ,()=>{
         const localData = localStorage.getItem('isSummer');
-        return localData ? JSON.parse(localData) : []; 
+        return localData ? JSON.parse(localData) : true; 
     } );
     const[destinations,setDestinations] =useReducer(userDestinations,[],()=>{
         const localData = localStorage.getItem('destinations');
-        return localData ? JSON.parse(localData) : []; })
+        return localData ? JSON.parse(localData) : {'destinations': []} ;})
    
     const [tours,setTours] =useReducer(getData,[],()=>{
         const localData = localStorage.getItem('tours');
-        return localData ? JSON.parse(localData) : [];   
+        return localData ? JSON.parse(localData) : {'tours': []};   
     })
 
     const [tours_selected,setTours_selected] =useReducer(handleBuy,{
         cartList: [0],
         },()=>{
         const localData = localStorage.getItem('tours_selected');
-        return localData ? JSON.parse(localData) : [];   
+        return localData ? JSON.parse(localData) : {'tours_selected': []};   
     })
   
 

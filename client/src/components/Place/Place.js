@@ -9,14 +9,16 @@ import "dotenv"
 export default function Place() {
   const { isSummer,tours } = useContext(MyContext);
   const[selected,setSelected]=useState([])
-const[city, setCity] =useState([])
-const[description,setDescription]=useState("")
+  const[city, setCity] =useState([])
+  const[description,setDescription]=useState("")
+  
   useEffect(()=>{
     handlePlaces()
   },[tours])
-
+  
+  
   const handlePlaces=()=>{
-    const cities = [["City"],]
+    const cities = [["City"]]
     tours.tours.forEach(e=>  cities.push([`${e.place.split(',')[0]}`]))
     setCity(cities)
   }

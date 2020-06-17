@@ -14,7 +14,7 @@ import Contact from './pages/Contact/Contact'
 import Checkout from './pages/Checkout/Checkout'
 
 function App() {
- const {isSummer, setIsSummer,setTours}= useContext(MyContext)
+ const {isSummer, setIsSummer,setTours, tours}= useContext(MyContext)
  const history=useHistory()
 
 /**
@@ -28,8 +28,12 @@ function App() {
 
  }
  const handlerData = useCallback(()=>{
-  axios.get('/places', {params: {isSummer}}).then(res=>   setTours({type:'GET_DATA',tours:res.data.tours}))
+  axios.get('https://lidas-server.herokuapp.com/places', {params: {isSummer}}).then(res=>   setTours({type:'GET_DATA',tours:res.data.tours}));
+  
  },[isSummer,setTours])
+
+
+ 
 
  useEffect(() => {
   handlerData()

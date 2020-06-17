@@ -21,12 +21,16 @@ function Navegation({ toogleSummer }) {
 
   useEffect(() => {
     const places = [];
+    console.log(tours);
+    
     tours.tours.forEach((item) => places.push(item.place.split(',')[0]));
+
     setAllPlaces(places.filter((v, i) => places.indexOf(v) === i));
   }, [tours.tours]);
 
   useEffect(() => {
     const activitie = [];
+
     tours.tours.forEach((data) => {
      data.activities.split(',').forEach(e=>activitie.push(e))
    })

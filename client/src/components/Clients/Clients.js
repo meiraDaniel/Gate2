@@ -17,7 +17,7 @@ function Clients() {
 
 
 const handlerData = useCallback(()=>{
-  axios.get("/clients",{params:{isSummer}}).then(res=>setData(res.data.clients)).catch(err=> console.log(err))
+  axios.get("https://lidas-server.herokuapp.com/clients",{params:{isSummer}}).then(res=>setData(res.data.clients)).catch(err=> console.log(err))
  },[isSummer])
 
  useEffect(()=>{
