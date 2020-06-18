@@ -14,7 +14,7 @@
     justify-content: space-between;
     width: 80%;
     margin: auto;
-    padding-top: 15rem;
+    padding-top:20%;
 
 }
 
@@ -50,25 +50,6 @@
 
 .destination-container__flexBox_right{
     min-width: 45rem;
-}
-
-@media only screen and (min-width: 1301px) and (max-width: 1700px) {
-
-    .destination-container__flexBox{
-        width: 90%;
-        margin: auto;
-    }
-
-}
-
-@media only screen and (min-width: 1201px) and (max-width: 1400px) {
-
-    .destination-container__flexBox{
-        width: 90%;
-        margin-right: 0 auto;
-    }
-
-
 }
 
 
@@ -111,17 +92,29 @@
 
 }
 
-@media only screen and (min-width: 400px) and (max-width: 780px) {
+@media only screen and  (max-width: 600px) {
     .destination-container__flexBox{
         flex-direction: column;
         width: 80%;
         margin: 0 auto;
+        padding-top:15%;
 
     }
     .destination-container__flexBox_right{
         padding:0;
         width: 90%;
         margin: 0 auto;
+    }
+    .destination-container{
+        overflow:hidden;
+    }
+}
+
+@media only screen and (min-width:1030px){
+    .destination-container__flexBox{
+      
+        padding-top:8%;
+
     }
 }
 

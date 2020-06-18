@@ -19,12 +19,13 @@ const history =useHistory()
     return (
         <div className='place-card'>
             <div className='place-card__img'>
-                <img src={summerImg} alt='' />
+
+            <button  onClick={handleOnClick} className='button--big'>buy me</button>
+            <img src={summerImg} alt='place' />
+
             </div>
             <div className='place-card__content'>
-                <button  onClick={handleOnClick} className='button--big'>buy me</button>
                 <h1 className='place-card__title'>{title}</h1>
-                <div className='place-card__line'></div>
                 <ul className='place-card__text'>
                     {activities.map((data, index) => {
                         return <li key={index}>{data}</li>
@@ -32,9 +33,9 @@ const history =useHistory()
 
                 </ul>
                 <div className='place-card__botom'>
-                    <p className='place-card__botomQtdPeople'>{numberPeople} <span>Peoples</span></p>
+                <p className='place-card__botomQtdPeople'>{numberPeople} {numberPeople>1? <span>people</span>:<span>person</span>}</p>
                     <p className='place-card__botomQtdDays'>{numberDays} days</p>
-                    <p>${price}</p>
+                    <p id="price">${price}</p>
                 </div>
             </div>
             

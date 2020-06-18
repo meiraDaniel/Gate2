@@ -12,7 +12,6 @@ import Place from '../../components/Place/Place'
 function Home (){
   const { isSummer, destinations} = useContext(MyContext);
 
-    console.log(destinations);
     
 
     return(

@@ -6,24 +6,23 @@
     display:flex;
     align-items:center;
      color:white;
+     justify-content:center;
 }
 
 .clients--main-summer{
     @extend %clients--main ; 
-    background:$highlightsSummer;
 }
 .clients--main-winter{
   @extend %clients--main ; 
-  background:$mainBackgroundWinter;
 }
 %clients--center-carrossel{
     display:flex;
-    width:100%;
-    height:100%;
+    width:80%;
+    height:80%;
     align-items:center;
     justify-content: center;
     box-shadow: -6px 6px 10px black;
-    overflow-x:hidden;
+    overflow:hidden;
    
 }
 .clients--center-carrossel-summer{
@@ -45,7 +44,7 @@
     width: 55%;
     height:45%;
     img{
-        width:45%;
+        width:35%;
         height:10%;
         border-radius:100%;
     }
@@ -54,11 +53,12 @@
     align-items:center;
     h1{
         width:90%;
+        font-size:3vh;
         border-bottom:2px solid $backgroundSummer;
     }
 }
 .color-white{
-    font-size:8vh;
+    font-size:5vh;
 }
 .slide-arrow{
     width:30%;
@@ -75,6 +75,10 @@
 .carrossel-bottom-description{
     h2{
         margin:0;
+        font-size:3vh;
+    }
+    p{
+        font-size:2vh;
     }
 
 }

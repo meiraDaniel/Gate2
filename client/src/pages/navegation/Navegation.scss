@@ -89,6 +89,13 @@ nav {
   box-shadow: -6px 6px 30px rgba(0, 0, 0, 0.52);
   color: white;
   cursor: pointer;
+  img{
+    width:30%;
+    height:30%;
+  }
+  h3{
+    font-size:2vh;
+  }
 }
 .navegation--center-links-summer {
   @extend %navegation--center-links;

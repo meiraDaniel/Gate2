@@ -21,7 +21,6 @@ function Navegation({ toogleSummer }) {
 
   useEffect(() => {
     const places = [];
-    console.log(tours);
     
     tours.tours.forEach((item) => places.push(item.place.split(',')[0]));
 
@@ -121,6 +120,7 @@ function Navegation({ toogleSummer }) {
               isSummer ? "navegation--links-summer" : "navegation--links-winter"
             }
             onMouseEnter={() => handleOnMouseEnter("destination")}
+            onClick={() => set(!flag)} 
           >
             {" "}
             Destinations |{" "}
@@ -130,6 +130,7 @@ function Navegation({ toogleSummer }) {
               isSummer ? "navegation--links-summer" : "navegation--links-winter"
             }
             onMouseEnter={() => handleOnMouseEnter("activities")}
+             onClick={() => set(!flag)} 
           >
             {" "}
             Activities |{" "}
