@@ -164,6 +164,7 @@ function Navegation({ toogleSummer }) {
             : "close"
         }
       >
+        {flag?
         <div className="navegation--center-opendiv-summer">
           {link === "destination" ? (
             <div>
@@ -188,7 +189,7 @@ function Navegation({ toogleSummer }) {
               ))}
             </div>
           ) : null}
-        </div>
+        </div>:null}
       </section>
     </main>
   );
